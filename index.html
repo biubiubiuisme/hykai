@@ -25,6 +25,40 @@
 .client-panel{margin-top:16px;overflow:hidden}.client-head{padding:22px 24px 18px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:20px;background:linear-gradient(90deg,#fff,#f7fbfc)}.client-head h3{margin:5px 0 0;font-size:26px;color:var(--navy)}.client-summary{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.client-summary span{padding:7px 10px;border-radius:999px;background:#eef5f7;color:#31566a;font-size:12px;font-weight:700}.client-summary .three-a{background:#fff2d4;color:#8a5b00}.client-summary .analysis{background:#e5f5f1;color:#08716d}.client-tools{padding:12px 24px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--line);overflow:auto}.client-filter{border:1px solid #cfdee4;background:#fff;color:#496777;border-radius:8px;padding:8px 12px;white-space:nowrap;cursor:pointer}.client-filter.active{background:var(--navy);border-color:var(--navy);color:#fff}.client-grid{padding:18px 24px 24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.client-card{position:relative;min-height:128px;padding:15px;border:1px solid #dce7eb;border-radius:12px;background:#fff;box-shadow:0 5px 16px rgba(12,52,78,.045)}.client-card.three-a{border-color:#dfb657;background:linear-gradient(150deg,#fffdfa,#fff7e4)}.client-card.benchmark:before{content:"标杆";position:absolute;right:10px;top:10px;padding:3px 6px;border-radius:5px;background:#0d817c;color:#fff;font-size:10px;font-weight:700}.client-card h4{margin:0 42px 12px 0;color:#173d58;font-size:15px;line-height:1.45}.client-meta{display:flex;gap:6px;flex-wrap:wrap}.client-tag{padding:4px 7px;border-radius:999px;background:#edf3f6;color:#547080;font-size:11px}.client-tag.signed{background:#e6f4ef;color:#08705a}.client-tag.trial{background:#e9f1fb;color:#2164a4}.client-tag.grade{background:#f3bd49;color:#533800;font-weight:800}.client-tag.rank{background:#0b2e4f;color:#fff;font-weight:800}.client-analysis{margin-top:12px;padding-top:10px;border-top:1px solid rgba(13,129,124,.14);display:flex;justify-content:space-between;align-items:baseline;color:#5f7585;font-size:11px}.client-analysis b{font:700 17px Arial;color:var(--teal)}.client-empty{grid-column:1/-1;padding:26px;text-align:center;color:var(--muted)}.client-more{margin:0 24px 22px;border:0;background:transparent;color:var(--teal);font-weight:700;cursor:pointer}.client-source{padding:0 24px 18px;color:#8496a1;font-size:11px;line-height:1.7}.rank-row{cursor:pointer}.rank-row:hover span{color:var(--teal);font-weight:700}
 @media(max-width:980px){.client-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.client-head{padding:18px 16px;align-items:flex-start;flex-direction:column}.client-head h3{font-size:22px}.client-summary{justify-content:flex-start}.client-tools{padding:10px 14px}.client-grid{padding:13px 14px 18px;grid-template-columns:1fr}.client-card{min-height:0}.client-source{padding:0 14px 16px}.client-more{margin-left:14px}}
+
+.rd-block{margin-top:22px}
+.rd-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.rd-h b{font-size:19px;color:var(--navy)}
+.rd-h span{font-size:11px;letter-spacing:.14em;color:var(--teal);font-weight:800}
+.rd-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rd-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rd-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.rd-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 6px 20px rgba(12,52,78,.045)}
+.rd-card i{font:700 10px Arial;color:var(--teal);font-style:normal;letter-spacing:.14em}
+.rd-card b{display:block;margin:9px 0 7px;font-size:16px;color:var(--navy)}
+.rd-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
+.rd-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.rd-step{position:relative;padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.rd-step.on{border-color:#0d817c;background:linear-gradient(150deg,#eefaf7,#fff);box-shadow:0 8px 22px rgba(13,129,124,.10)}
+.rd-step i{font:700 10px Arial;color:var(--muted);font-style:normal;letter-spacing:.1em}
+.rd-step.on i{color:var(--teal)}
+.rd-step b{display:block;margin:8px 0 6px;font-size:15px;color:var(--navy)}
+.rd-step span{font-size:12px;line-height:1.65;color:var(--muted)}
+.rd-table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:620px}
+.rd-table th{background:#eef4f7;color:#31566a;font-size:12px;text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);font-weight:700}
+.rd-table td{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13px;color:#3d586b}
+.rd-table tr:last-child td{border-bottom:0}
+.rd-table td.hl,.rd-table th.hl{color:var(--teal);font-weight:800;background:rgba(13,129,124,.05)}
+.rd-table tr.sum td{background:#f6fbfb;font-weight:700;color:var(--navy)}
+.rd-note{margin-top:12px;padding:12px 15px;border-left:3px solid var(--gold);background:#fffaf0;border-radius:5px;font-size:12px;line-height:1.8;color:#6d6350}
+.rd-note b{color:#8a6b17}
+.rd-patent{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.rd-patent li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;padding:12px 16px;border-bottom:1px solid var(--line);font-size:13px;color:#3d586b}
+.rd-patent li:last-child{border-bottom:0}
+.rd-patent .st{font-size:11px;padding:3px 8px;border-radius:999px;background:var(--mint);color:#08716d;font-weight:700;white-space:nowrap}
+.rd-patent .st.done{background:#e8eef3;color:#456478}
+@media(max-width:980px){.rd-4,.rd-3,.rd-flow{grid-template-columns:repeat(2,1fr)}.rd-2{grid-template-columns:1fr}}
+@media(max-width:620px){.rd-4,.rd-3,.rd-flow,.rd-2{grid-template-columns:1fr}.rd-h b{font-size:17px}.rd-patent li{grid-template-columns:1fr;gap:6px}}
 </style>
 </head>
 <body>
@@ -67,14 +101,176 @@
 <tr><td>套餐三<span class="sub">规模建设</span></td><td><span class="price">160万</span><span class="sub">8万/季</span></td><td>240片扫描仪 ×2<br>智慧病理一体机</td><td><span class="tag">本地部署</span><span class="sub">iPath智慧病理系统V1.0，18个数字病理模块</span></td><td>≤10个工作日</td></tr>
 </tbody></table></div></section>
 
-<section class="section" id="rnd"><div class="section-head"><div><div class="kicker">R&amp;D TO CLINIC</div><h2>研发不是参数展示，而是把更准、更快、更轻的AI持续交付到医院</h2></div><div class="section-note">2026年上半年研发工作形成“数据—底座—专病模型—本地交付”闭环，并以真实业务数据持续验证与迭代。</div></div>
-<div class="panel rnd-stage"><div class="rnd-top"><div><div class="kicker" style="color:#83d8cf">FROM DATA TO DELIVERY</div><h3>四层研发能力，打通从模型训练到临床应用</h3><p>基础模型提供跨病种能力，专病模型解决具体临床任务，推理与调参平台则把算法转化为医院可以稳定使用的产品。</p></div><div class="rnd-pipeline"><div class="pipe-step"><i>01 DATA</i><b>临床数据底座</b><span>多机构、多病种数据清洗与标准化</span></div><div class="pipe-step"><i>02 FOUNDATION</i><b>PanoPath底座</b><span>ViT-H架构，连接形态与空间组学</span></div><div class="pipe-step"><i>03 SPECIALTY</i><b>专病模型矩阵</b><span>组织学、细胞学、免疫组化协同迭代</span></div><div class="pipe-step"><i>04 DELIVERY</i><b>本地部署交付</b><span>SlideInfer与调参平台支撑持续运营</span></div></div></div>
-<div class="rnd-kpis"><div class="rnd-kpi"><strong>400万+</strong><span>PanoPath训练切片规模</span></div><div class="rnd-kpi"><strong>190万</strong><span>覆盖病例规模</span></div><div class="rnd-kpi"><strong>321类</strong><span>PanoBench诊断任务体系</span></div><div class="rnd-kpi"><strong>50+轮</strong><span>训练实验迭代</span></div></div></div>
-<div class="rnd-grid">
-  <article class="panel rnd-card" data-index="01"><h3>临床性能持续提升</h3><p>围绕高频病种进行版本滚动升级，不只扩展诊断标签，也同步优化敏感性、特异性与分型能力。</p><div class="result-list"><div class="result-row"><span>肺多模态AI敏感性</span><b>95.25% → 98.1%</b></div><div class="result-row"><span>肺腺癌分型准确率</span><b>51% → 83%</b></div><div class="result-row"><span>TCT病变敏感性</span><b>95.72% → 98.01%</b></div></div></article>
-  <article class="panel rnd-card" data-index="02"><h3>同等硬件承载更高效率</h3><p>TCT 3.0同时优化推理框架与资源占用，让本地部署从“能运行”进一步走向“更轻量、更高效”。</p><div class="result-list"><div class="result-row"><span>GB10平均推理耗时</span><b>180秒 → 90秒</b></div><div class="result-row"><span>显存占用</span><b>23G → 12G</b></div><div class="result-row"><span>病原体符合率</span><b>40.05% → 81.66%</b></div></div></article>
-  <article class="panel rnd-card" data-index="03"><h3>更快完成多病种落地</h3><p>SlideInfer与病理AI调参平台把模型能力封装为标准化部署工具，缩短现场适配、参数优化与版本交付周期。</p><div class="result-list"><div class="result-row"><span>器官模型并发能力</span><b>2 → 14</b></div><div class="result-row"><span>单产品上线周期</span><b>提速 7×</b></div><div class="result-row"><span>产品交付时间</span><b>缩短 40%</b></div></div></article>
-</div><div class="rnd-reserve"><div class="reserve-title"><b>产品储备形成梯次</b><span>覆盖组织学、细胞学、免疫组化等方向，按验证状态逐步进入项目应用。</span></div><div class="reserve-item"><strong>6个</strong><span>达到可发布状态</span></div><div class="reserve-item"><strong>17个</strong><span>集团内部验证</span></div><div class="reserve-item"><strong>8个</strong><span>持续研发</span></div></div><div class="status-note">研发状态说明：可发布、内部验证与研发中为不同阶段，不等同于全部已正式对外发布；具体可用模块、性能边界与版本以项目评估及正式合同为准。</div></section>
+<section class="section" id="rnd">
+  <div class="section-head">
+    <div><div class="kicker">R&amp;D TO CLINIC</div><h2>研发不是参数展示，而是把更准、更快、更轻的AI持续交付到医院</h2></div>
+    <div class="section-note">2026 年上半年研发工作形成「数据—底座—专病模型—本地交付」闭环，并以真实业务数据持续验证与迭代。研发口径截至 2026 年上半年研发总结。</div>
+  </div>
+
+  <div class="panel rnd-stage">
+    <div class="rnd-top">
+      <div><div class="kicker" style="color:#7fdbd1">FROM DATA TO DELIVERY</div><h3>四层研发能力，打通从模型训练到临床应用</h3><p>基础模型提供跨病种能力，专病模型解决具体临床任务，推理与调参平台则把算法转化为医院可以稳定使用的产品。</p></div>
+      <div class="rnd-pipeline">
+        <div class="pipe-step"><i>01 DATA</i><b>临床数据底座</b><span>多机构、多病种数据清洗与标准化</span></div>
+        <div class="pipe-step"><i>02 FOUNDATION</i><b>PanoPath底座</b><span>ViT-H架构，连接形态与空间组学</span></div>
+        <div class="pipe-step"><i>03 SPECIALTY</i><b>专病模型矩阵</b><span>组织学、细胞学、免疫组化协同迭代</span></div>
+        <div class="pipe-step"><i>04 DELIVERY</i><b>本地部署交付</b><span>SlideInfer与调参平台支撑持续运营</span></div>
+      </div>
+    </div>
+    <div class="rnd-kpis">
+      <div class="rnd-kpi"><strong>约420万</strong><span>八批合计训练切片，190 万病例</span></div>
+      <div class="rnd-kpi"><strong>321类</strong><span>PanoBench 诊断任务体系</span></div>
+      <div class="rnd-kpi"><strong>50+轮</strong><span>训练实验迭代</span></div>
+      <div class="rnd-kpi"><strong>15+项</strong><span>年度知识产权申请规划</span></div>
+    </div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>研发组织：自有算法团队与高校联合研究</b><span>TEAM &amp; COLLABORATION</span></div>
+    <div class="rd-4">
+      <div class="rd-card"><i>01 IN-HOUSE</i><b>AI 创新中心</b><p>华银康自有算法团队，负责病理基础模型、专病模型与本地推理框架的研发与迭代。</p></div>
+      <div class="rd-card"><i>02 ACADEMIC</i><b>清华大学黄高教授团队</b><p>联合开展病理基础大模型研究，共同推进单阶段端到端建模与全景注意力机制方向。</p></div>
+      <div class="rd-card"><i>03 JOINT LAB</i><b>琶洲实验室智慧医疗病理 AI 研究中心</b><p>面向智慧医疗病理 AI 的联合研究平台，支撑前沿方法验证与成果沉淀。</p></div>
+      <div class="rd-card"><i>04 LABELING</i><b>数据标注与质控体系</b><p>十四大亚专科病理专家团队与 100 余名高水平标注人员；片级标注 300 例/天，图像分割 2000 框/天。</p></div>
+    </div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>PanoPath：单阶段端到端病理基础大模型</b><span>FOUNDATION MODEL</span></div>
+    <div class="rd-flow">
+      <div class="rd-step"><i>阶段 ①</i><b>Tile 级预训练</b><span>学习局部图像特征，产出图块或图文对齐表征</span></div>
+      <div class="rd-step"><i>阶段 ②</i><b>分阶段建模</b><span>图块编码器加切片聚合器，编码器多为冻结</span></div>
+      <div class="rd-step on"><i>阶段 ③</i><b>单阶段端到端</b><span>无独立编码器与聚合器，全切片原生训练与构建</span></div>
+      <div class="rd-step"><i>阶段 ④</i><b>能力延伸</b><span>由 H&amp;E 预测并生成空间分子信息</span></div>
+    </div>
+    <div class="rd-4" style="margin-top:12px">
+      <div class="rd-card"><i>ARCHITECTURE</i><b>无独立编码器与聚合器</b><p>全切片原生训练与构建，避免分阶段建模的表征割裂。</p></div>
+      <div class="rd-card"><i>ATTENTION</i><b>Local + Global Attention</b><p>兼顾局部形态细节与全片上下文，配合 RWKV 等高效长序列算子压缩训练周期。</p></div>
+      <div class="rd-card"><i>PANOPTIC</i><b>全景建模</b><p>以全景注意力统一切片内结构与病灶区域表达，支持分割与分类协同。</p></div>
+      <div class="rd-card"><i>BACKBONE</i><b>ViT-H 与双组学</b><p>视觉骨干由 ViT-L 升级至 ViT-H，训练阶段注入空间转录组与空间蛋白组信号。</p></div>
+    </div>
+    <div class="rd-note">分类依据《AI 病理基础模型四阶段分类》。在该框架下，PanoPath 属阶段三「单阶段端到端」，架构特征为无独立图块编码器与聚合器、全切片原生训练；技术路线对比覆盖 GigaPath、CHIEF、TITAN、Virchow 等国际主流模型。空间多组学预测为国际同行共有的能力方向，不构成独占差异。</div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>训练数据：八批清洗汇总，约 420 万张切片</b><span>DATA ASSET</span></div>
+    <div class="table-wrap"><table class="rd-table">
+      <thead><tr><th>批次</th><th>数据日期</th><th>数据形态</th><th>切片数量</th><th>病例数量</th></tr></thead>
+      <tbody>
+        <tr><td>第一批</td><td>2024.9–2025.2</td><td>一对一</td><td>23 万</td><td>23 万</td></tr>
+        <tr><td>第二批</td><td>2024.9–2025.2</td><td>一对多</td><td>65 万</td><td>17 万</td></tr>
+        <tr><td>第三批</td><td>2025.2–2025.6</td><td>一对一、一对多</td><td>14 万</td><td>10 万</td></tr>
+        <tr><td>第四批</td><td>2024 全年</td><td>一对一、一对多</td><td>48 万</td><td>21 万</td></tr>
+        <tr><td>第五批</td><td>2020–2023</td><td>一对一</td><td>51 万</td><td>51 万</td></tr>
+        <tr><td>第六批</td><td>2020–2023</td><td>一对多</td><td>200 万</td><td>50 万</td></tr>
+        <tr><td>第七批</td><td>2025.7–2025.12</td><td>一对一</td><td>13 万</td><td>13 万</td></tr>
+        <tr><td>第八批</td><td>2026.1 至今</td><td>一对一、一对多</td><td>7 万</td><td>5 万</td></tr>
+        <tr class="sum"><td>合计</td><td>2020 年至今</td><td>一对一、一对多</td><td>约 420 万</td><td>190 万</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rd-note">预训练数据由多 Agent 协同完成标准化与质量闭环：翻译 Agent、信息整合 Agent、多医生会诊 Agent 与质量审核 Agent 串联，审核不通过则回流修订，最终形成标准化患者报告。数据跨度 2020 年至今，一对一与一对多数据并行积累。</div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>PanoBench：321 类诊断任务评测体系</b><span>BENCHMARK</span></div>
+    <div class="table-wrap"><table class="rd-table">
+      <thead><tr><th>评测任务</th><th class="hl">PanoPath</th><th>TITAN</th><th>CHIEF</th><th>GigaPath</th></tr></thead>
+      <tbody>
+        <tr><td>IMP｜结直肠 3 分级</td><td class="hl">0.964</td><td>0.937</td><td>0.914</td><td>0.903</td></tr>
+        <tr><td>BRACS｜乳腺肿瘤 3 分级</td><td class="hl">0.727</td><td>0.707</td><td>0.704</td><td>0.606</td></tr>
+        <tr><td>EBRAINS｜脑肿瘤 12 分类</td><td class="hl">0.886</td><td>0.886</td><td>0.792</td><td>0.863</td></tr>
+        <tr><td>TCGA-OT｜泛癌 46 分类</td><td class="hl">0.825</td><td>0.811</td><td>0.739</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rd-note">评测覆盖 PanoBench 及 TCGA、CPTAC、EBRAINS、PANDA 等国际开源数据集，病灶分割任务在 CAMELYON16、Gleason2019 等数据集上验证。上表为 88 万张切片训练版本口径，当前底座已扩充至 400 万级；研发评测结果不替代医疗器械注册临床评价。</div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>从形态到分子：空间组学预测能力</b><span>SPATIAL OMICS</span></div>
+    <div class="rd-2">
+      <div class="rd-card"><i>OUTPUT 01</i><b>虚拟空间转录组</b><p>由 H&amp;E 切片预测空间基因表达，覆盖 18,000+ 基因，在形态与分子之间建立可计算关联。</p></div>
+      <div class="rd-card"><i>OUTPUT 02</i><b>虚拟空间蛋白组</b><p>预测空间蛋白表达，覆盖 21 通道，为标志物发现提供切片级分子视角。</p></div>
+    </div>
+    <div class="rd-note">该能力的潜在价值在于以更低成本获取分子信息，支撑标志物发现、患者分层与药物研究。当前处于研发推进阶段，不属于已商业化的临床收费项目。</div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>细胞学算法：从任务串联走向统一基础模型</b><span>CYTOPATHOLOGY</span></div>
+    <div class="rd-3">
+      <div class="rd-card"><i>STAGE 01</i><b>自监督预训练</b><p>以 DINOv3 为视觉骨干，从大量未标注细胞学图块中学习通用表征，降低对标注的依赖。</p></div>
+      <div class="rd-card"><i>STAGE 02</i><b>检测与分类多任务训练</b><p>共享骨干，检测头与分类头联合训练，并以最严重检测类别派生分类标签。</p></div>
+      <div class="rd-card"><i>STAGE 03</i><b>冻结骨干优化检测头</b><p>冻结骨干、只训练检测头，把检测能力收敛到最优，形成最终模型。</p></div>
+    </div>
+    <div class="rd-note">架构由任务特异的串联模型升级为「自监督联合多任务监督」的细胞学基础模型与多任务适配，同一套表征可服务宫颈、甲状腺、尿液、呼吸道、胸腹水等细胞学场景。</div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>交付工程：让模型在医院现场稳定运行</b><span>ENGINEERING</span></div>
+    <div class="rd-2">
+      <div class="rd-card"><i>FRAMEWORK</i><b>SlideInfer 推理框架</b><p>面向本地化部署的病理 AI 推理框架，支撑器官并发能力由 2 提升至 14，并降低单机资源占用。</p></div>
+      <div class="rd-card"><i>PLATFORM</i><b>病理 AI 调参平台</b><p>把现场适配沉淀为可复用版本：23 家适配机构、3 个特征适配模型版本、12 个诊断适配模型，交付时间缩短 40%。</p></div>
+    </div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>大模型与智能体：把 AI 能力沉到业务流程</b><span>LLM &amp; AGENTS</span></div>
+    <div class="rd-4">
+      <div class="rd-card"><i>MARKETPLACE</i><b>华银康 Skillhub</b><p>面向集团内部的 AI 技能市场，集中分发营销、财务、实验室与 B 端医生等业务域沉淀的技能。</p></div>
+      <div class="rd-card"><i>AGENT</i><b>专科诊断智能体</b><p>血液病 MICM 诊断助手基于大模型与专业知识库，单例诊断时间由 30 分钟缩短至 5 分钟。</p></div>
+      <div class="rd-card"><i>AGENT</i><b>报告与质控智能体</b><p>病理报告解读、报告文本校验、危急值与传染病解读，形成报告全流程的智能校验闭环。</p></div>
+      <div class="rd-card"><i>MODEL</i><b>本地化小模型部署</b><p>微调小模型支持本地部署，在数据不出院的前提下支撑文本识别与组织学器官分类。</p></div>
+    </div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>知识产权与学术成果</b><span>IP &amp; RESEARCH OUTPUT</span></div>
+    <ul class="rd-patent">
+      <li><span class="st done">论文</span><span>A Native Panoptic Foundation Model for Clinical-scale Whole-slide Pathology Biomarker</span><span class="st">收尾待投</span></li>
+      <li><span class="st done">专利</span><span>一种基于全景空间注意力机制的病理全切片图像端到端训练方法</span><span class="st">已申报</span></li>
+      <li><span class="st done">专利</span><span>一种基于文本引导动态图像块采样的高效病理全切片图像训练方法</span><span class="st">已申报</span></li>
+      <li><span class="st done">专利</span><span>一种全景强监督驱动的 WSI 基础模型预训练方法</span><span class="st">已申报</span></li>
+      <li><span class="st done">专利</span><span>一种肺癌病理诊断方法、装置、设备及存储介质</span><span class="st">已受理</span></li>
+      <li><span class="st">专利</span><span>一种基于病例级风险分层的宫颈细胞学 AI 分流方法及系统</span><span class="st">申请中</span></li>
+      <li><span class="st">专利</span><span>一种基于 AI 的淋巴瘤免疫表型预测方法</span><span class="st">申请中</span></li>
+      <li><span class="st">专利</span><span>基于多模态、多尺度、多模型融合的消化道活检 AI 辅助方法</span><span class="st">申请中</span></li>
+      <li><span class="st done">会议</span><span>基于免疫表型感知的形态分子关联学习网络在 B 细胞淋巴瘤常见亚型鉴别中的应用</span><span class="st">优秀论文</span></li>
+    </ul>
+    <div class="rd-note">2026 年规划 15+ 项知识产权申请，围绕病理 AI 基础模型、数据闭环、产品验证与大模型应用形成成果池。以上状态截至 2026 年上半年研发总结，专利与论文状态以官方受理及录用结果为准。</div>
+  </div>
+
+  <div class="rd-block">
+    <div class="rd-h"><b>2026 下半年研发路线图</b><span>ROADMAP</span></div>
+    <div class="rd-4">
+      <div class="rd-card"><i>01 MULTIMODAL</i><b>PanoPath-VL</b><p>建设 WSI 病理多模态基础模型，形成面向切片与临床信息的可交互诊断底座。</p></div>
+      <div class="rd-card"><i>02 AGENT</i><b>Agent + PanoPath</b><p>面向癌种诊断构建 Agent 工作流，把基础模型能力编排进临床任务链路。</p></div>
+      <div class="rd-card"><i>03 BACKBONE</i><b>PanoPath-V2</b><p>升级 DINOv3 视觉骨干，进一步提升表征质量与跨病种泛化能力。</p></div>
+      <div class="rd-card"><i>04 OMICS</i><b>空间组学预测优化</b><p>持续优化空间蛋白组与转录组预测，深化形态与分子的空间表型关联。</p></div>
+    </div>
+    <div class="rd-note">下半年重点从「可用模型」走向「可解释、多模态、可落地」的病理 AI 能力。</div>
+  </div>
+
+  <div class="rd-note"><b>研发与合规边界</b>　PanoPath 定位为病理图像与多组学数据的底层通用能力底座，不预设单一临床用途、不直接输出诊断结论，基础模型层不按医疗器械产品注册。具有明确医疗用途的应用软件，例如专病辅助诊断软件、免疫组化定量分析、HE 切片质控平台，按现行分类目录另行申请注册。本页研发评测数据来自内部研发评测与国际公开数据集对比，不替代医疗器械注册临床评价。</div>
+
+  <div class="rnd-grid">
+    <div class="panel rnd-card" data-index="A"><h3>临床性能持续提升</h3><p>围绕高频病种进行版本滚动升级，不只扩展诊断标签，也同步优化敏感性、特异性与分型能力。</p>
+      <div class="result-list"><div class="result-row"><span>肺多模态AI敏感性</span><b>95.25% → 98.1%</b></div><div class="result-row"><span>肺腺癌分型准确率</span><b>51% → 83%</b></div><div class="result-row"><span>TCT病变敏感性</span><b>95.72% → 98.01%</b></div></div>
+    </div>
+    <div class="panel rnd-card" data-index="B"><h3>同等硬件承载更高效率</h3><p>TCT 3.0 同时优化推理框架与资源占用，让本地部署从“能运行”进一步走向“更轻量、更高效”。</p>
+      <div class="result-list"><div class="result-row"><span>GB10平均推理耗时</span><b>180秒 → 90秒</b></div><div class="result-row"><span>显存占用</span><b>23G → 12G</b></div><div class="result-row"><span>病原体符合率</span><b>40.05% → 81.66%</b></div></div>
+    </div>
+    <div class="panel rnd-card" data-index="C"><h3>更快完成多病种落地</h3><p>SlideInfer 与病理 AI 调参平台把模型能力封装为标准化部署工具，缩短现场适配、参数优化与版本交付周期。</p>
+      <div class="result-list"><div class="result-row"><span>器官模型并发能力</span><b>2 → 14</b></div><div class="result-row"><span>单产品上线周期</span><b>提速 7×</b></div><div class="result-row"><span>产品交付时间</span><b>缩短 40%</b></div></div>
+    </div>
+  </div>
+
+  <div class="rnd-reserve">
+    <div class="reserve-title"><b>产品储备形成梯次</b><span>覆盖组织学、细胞学、免疫组化等方向，按验证状态逐步进入项目应用。</span></div>
+    <div class="reserve-item"><strong>6个</strong><span>达到可发布状态</span></div>
+    <div class="reserve-item"><strong>17个</strong><span>集团内部验证</span></div>
+    <div class="reserve-item"><strong>8个</strong><span>持续研发</span></div>
+  </div>
+  <div class="status-note">研发状态说明：可发布、内部验证与研发中为不同阶段，不等同于全部已正式对外发布；具体可用模块、性能边界与版本以项目评估及正式合同为准。</div>
+</section>>
 
 <section class="section" id="proof"><div class="section-head"><div><div class="kicker">CLINICAL PROOF</div><h2>从基础模型到临床模块，以可验证指标支撑应用</h2></div></div>
 <div class="proof-grid">
@@ -86,7 +282,7 @@
 
 <section class="cta" id="contact"><div><div class="kicker" style="color:#83d8cf">START A PROJECT</div><h2>从一次项目评估开始，找到最合适的建设路径</h2><p>围绕医院现有设备、切片量、信息系统与重点病种，完成方案匹配、投入测算和试用验证，再进入正式建设。</p><div class="contact"><strong>服务热线：400-888-1223</strong><br>广州市黄埔区滨河路33号<br>广州市白云区沙太南路1023-1063号南方医科大学生命科学楼2楼</div></div><div class="steps"><div class="step"><b>01</b>现状与需求评估</div><div class="step"><b>02</b>套餐与部署方式匹配</div><div class="step"><b>03</b>临床试用与价值验证</div><div class="step"><b>04</b>项目交付与持续运营</div></div></section>
 
-<div class="sources">数据与口径来源：①《智慧病理区域签约&试用情况汇总0926.xlsx》，客户覆盖、合作状态及试用累计上传数量截至2026-09-26；②《智慧病理客户管理登记表0921.xlsx》，用于医院等级与原标杆标识核验；③复旦版《2023年度中国医院综合排行榜》（2024年11月16日发布），用于三甲客户分档排序，同档不分先后；④北京天坛医院、北京市政府公开信息及军队医院公开资料，用于北京医院等级补充核验；⑤《2026H1病理AI产品研发工作总结》；⑥《华银康集团智慧病理科数智化建设解决方案v9》；⑦《数智病理科三大服务套餐解析20260115》用于配置口径，套餐价格按当前最新确认口径为100万/130万/160万元；⑧国家医保局《病理类医疗服务价格项目立项指南（试行）》。本页面用于销售沟通与方案展示，具体产品版本、配置、价格与服务边界以项目评估及正式合同为准。</div>
+<div class="sources">数据与口径来源：①《智慧病理区域签约&试用情况汇总0926.xlsx》，客户覆盖、合作状态及试用累计上传数量截至2026-09-26；②《智慧病理客户管理登记表0921.xlsx》，用于医院等级与原标杆标识核验；③复旦版《2023年度中国医院综合排行榜》（2024年11月16日发布），用于三甲客户分档排序，同档不分先后；④北京天坛医院、北京市政府公开信息及军队医院公开资料，用于北京医院等级补充核验；⑤《2026H1病理AI产品研发工作总结》；⑥《华银康集团智慧病理科数智化建设解决方案v9》；⑦《数智病理科三大服务套餐解析20260115》用于配置口径，套餐价格按当前最新确认口径为100万/130万/160万元；⑧国家医保局《病理类医疗服务价格项目立项指南（试行）》；⑨《AI 病理基础模型四阶段分类》与《PanoPath 技术地位路演单页》（2026-09），用于技术路线定位；⑩《华银康PanoPath 医疗器械属性监管沟通材料》（2026-08-20），用于研发与合规边界表述；⑪《2025 年度华银康病理 AI 产品总览（对外版）》（2025-11-06），用于 PanoBench 评测对比与智能体案例。本页面用于销售沟通与方案展示，具体产品版本、配置、价格与服务边界以项目评估及正式合同为准。</div>
 <div class="footer">广州华银康医疗集团股份有限公司 · 智慧病理服务价值看板</div>
 </main>
 <div class="map-tooltip" id="mapTooltip"></div>
