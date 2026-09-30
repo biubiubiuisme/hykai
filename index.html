@@ -317,6 +317,7 @@
 </section>>
 
 
+
 <!--PLV1-->
 <style>
 .pl-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 24px;border-bottom:1px solid var(--line)}
@@ -691,7 +692,7 @@ document.querySelectorAll('.pl-card').forEach(function(card){
 card.addEventListener('click',function(){card.classList.toggle('open');
 card.querySelector('.pl-toggle').textContent=card.classList.contains('open')?'收起详情 ▴':'展开产品详情 ▾';});});
 layout();
-});
+})();
 </script>
 <section class="section" id="customers"><div class="section-head"><div><div class="kicker">CUSTOMER PORTFOLIO</div><h2>标杆客户背书先行，复旦榜单三甲领衔全国客户阵容</h2></div><div class="section-note">默认展示全国已核验客户：标杆客户优先（含复旦版2023年度中国医院综合排行榜上榜医院），标杆内部按复旦档位排序、同档不分先后；其余已核验客户随后展示。点击地图省份可联动筛选。</div></div>
 <div class="panel client-panel"><div class="client-head"><div><div class="kicker">VERIFIED CUSTOMER LIST</div><h3 id="clientTitle">全国客户阵容</h3></div><div class="client-summary"><span>机构 115 家</span><span>项目记录 117 条</span><span class="three-a">已核验三甲 24 家</span><span class="analysis">试用分析 52,259 例</span></div></div><div class="client-tools"><button class="client-filter active" data-filter="all">全部客户</button><button class="client-filter" data-filter="threeA">三甲医院</button><button class="client-filter" data-filter="signed">签约客户</button><button class="client-filter" data-filter="trial">试用客户</button><button class="client-filter" id="clearProvince">清除省份筛选</button></div><div class="client-grid" id="clientGrid"></div><button class="client-more" id="clientMore">展开全部客户</button><div class="client-source">试用分析量取自Excel“累计上传数量”字段，共46家有填报、28家为空；空值不按0计算。三甲等级来自客户登记表及北京医院公开信息；复旦榜单自2023年度起采用A++++至A分档，同档内不排序。</div></div></section>
