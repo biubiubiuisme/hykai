@@ -41,7 +41,7 @@
     const gate=document.createElement('main');
     gate.id='hykai-access-gate';
     gate.innerHTML=`<section class="hykai-access-card" aria-labelledby="accessTitle">
-      <div class="hykai-access-brand"><img src="assets/huayin-logo-color.png" alt="华银康集团"><span></span><div><b>HYKAI</b><small>智慧病理方案平台</small></div></div>
+      <div class="hykai-access-brand"><img src="assets/public-logo.png" alt="华银康集团"><span></span><div><b>HYKAI</b><small>智慧病理方案平台</small></div></div>
       <h1 id="accessTitle">访问验证</h1>
       <p>本平台仅供授权的华银康员工及客户使用。请输入账号和密码继续。</p>
       <form id="hykaiAccessForm">
