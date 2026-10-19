@@ -1,7 +1,7 @@
 (()=>{
   'use strict';
-  const STORAGE_KEY='hykai_access_v2';
-  const ACCOUNT_HASH='3496fe33374c731ebf244551962e2a36fbb7f16737f8e9c8a412ee4c18d7e7f7';
+  const STORAGE_KEY='hykai_access_v3';
+  const ACCOUNT_HASH='6f5dc6232d16bc8a3c763bda9981fe78e8b2ca36e0b401750ca30c1a95dcd1fb';
 
   function validSession(){
     try{
