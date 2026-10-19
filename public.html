@@ -127,8 +127,6 @@
     </div>
   </div>
 
-  <div class="section-note" style="margin-top:12px;padding:12px 14px;border:1px solid #ead4aa;background:#fff8e9;color:#76501c">对外使用边界：本节 400 万级切片、190 万病例、PanoBench 321 类任务、研发迭代与知识产权数据来自 2026 上半年研发总结，属于研发内部口径；在官网正式发布前需完成研发及合规复核。</div>
-
   <div class="rd-block">
     <div class="rd-h"><b>客户经常问的三个问题</b><span>TOP 3 QUESTIONS</span></div>
     <div class="rd-3">
@@ -614,9 +612,15 @@ const normalizePolygon=p=>p.forEach((r,i)=>{const a=ringArea(r);if((i===0&&a>0)|
 GEOJSON.features.forEach(f=>{const g=f.geometry;if(g.type==='Polygon')normalizePolygon(g.coordinates);if(g.type==='MultiPolygon')g.coordinates.forEach(normalizePolygon)});
 const mapGeo={type:'FeatureCollection',features:GEOJSON.features.filter(f=>f.properties&&f.properties.name&&f.properties.adcode!=='100000_JD')};
 const svg=d3.select('#map'),tip=document.getElementById('mapTooltip');
+const hideMapTip=()=>{tip.style.opacity=0};
+window.addEventListener('scroll',hideMapTip,{passive:true,capture:true});
+window.addEventListener('blur',hideMapTip);
+document.addEventListener('visibilitychange',hideMapTip);
+document.addEventListener('pointerdown',hideMapTip,{passive:true});
+document.querySelector('.map-wrap')?.addEventListener('mouseleave',hideMapTip);
 const projection=d3.geoMercator().fitExtent([[34,24],[826,472]],mapGeo),path=d3.geoPath(projection);
 const color=d3.scaleSqrt().domain([0,maxTotal]).range(['#dfeaec','#0b6f70']);
-const g=svg.append('g'),paths=g.append('g').selectAll('path').data(mapGeo.features).join('path').attr('class','province').attr('data-name',d=>alias(d.properties.name)).attr('d',path).attr('fill',d=>{const v=PROVINCES[alias(d.properties.name)]?.total||0;return v?color(v):'#e5edf0'}).attr('aria-label',d=>{const n=alias(d.properties.name),v=PROVINCES[n]?.total||0;return n+(v?`覆盖${v}个项目记录`:'暂无在册项目')}).on('mouseenter',function(event,d){const n=alias(d.properties.name),v=PROVINCES[n]||{total:0,analysis:0};d3.select(this).raise();tip.innerHTML=`<b>${n}</b>${v.total?`覆盖项目记录 ${v.total}<br>试用分析量 ${fmt(v.analysis)}例`:'持续拓展中'}`;tip.style.left=event.clientX+'px';tip.style.top=event.clientY+'px';tip.style.opacity=1}).on('mousemove',function(event){tip.style.left=event.clientX+'px';tip.style.top=event.clientY+'px'}).on('mouseleave',()=>tip.style.opacity=0).on('click',function(event,d){selectProvince(alias(d.properties.name),this)});
+const g=svg.append('g'),paths=g.append('g').selectAll('path').data(mapGeo.features).join('path').attr('class','province').attr('data-name',d=>alias(d.properties.name)).attr('d',path).attr('fill',d=>{const v=PROVINCES[alias(d.properties.name)]?.total||0;return v?color(v):'#e5edf0'}).attr('aria-label',d=>{const n=alias(d.properties.name),v=PROVINCES[n]?.total||0;return n+(v?`覆盖${v}个项目记录`:'暂无在册项目')}).on('mouseenter',function(event,d){const n=alias(d.properties.name),v=PROVINCES[n]||{total:0,analysis:0};d3.select(this).raise();tip.innerHTML=`<b>${n}</b>${v.total?`覆盖项目记录 ${v.total}<br>试用分析量 ${fmt(v.analysis)}例`:'持续拓展中'}`;tip.style.left=event.clientX+'px';tip.style.top=event.clientY+'px';tip.style.opacity=1}).on('mousemove',function(event){tip.style.left=event.clientX+'px';tip.style.top=event.clientY+'px'}).on('mouseleave',hideMapTip).on('click',function(event,d){hideMapTip();selectProvince(alias(d.properties.name),this)});
 paths.attr('data-covered',d=>(PROVINCES[alias(d.properties.name)]?.total||0)>0?'true':'false');
 const covered=mapGeo.features.filter(d=>(PROVINCES[alias(d.properties.name)]?.total||0)>0);
 g.append('g').selectAll('text').data(mapGeo.features).join('text').attr('class',d=>'province-label '+((PROVINCES[alias(d.properties.name)]?.total||0)?'':'zero')).attr('transform',d=>`translate(${path.centroid(d)})`).attr('dy','.35em').text(d=>alias(d.properties.name));
