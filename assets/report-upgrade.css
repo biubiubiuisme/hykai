@@ -1,0 +1,24 @@
+/* 2026-10-12 可行性报告逻辑升级 */
+.project-extra{margin-top:20px;border:1px solid var(--line);border-radius:11px;background:#f8fbfd;overflow:hidden}
+.project-extra summary{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:14px 16px;cursor:pointer;list-style:none}
+.project-extra summary::-webkit-details-marker{display:none}
+.project-extra summary:after{content:"展开填写 +";font-size:9px;color:var(--brand);font-weight:700}
+.project-extra[open] summary:after{content:"收起 −"}
+.project-extra summary b{font-size:11px}
+.project-extra summary span{font-size:9px;color:var(--muted);margin-left:auto}
+.project-extra>.form-grid{padding:16px;border-top:1px solid var(--line);background:#fff}
+.report-subheading{font-size:12px;margin:22px 0 11px;color:var(--ink);border-left:3px solid var(--brand);padding-left:9px}
+.feasibility-matrix{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.feasibility-matrix>div{border:1px solid var(--line);padding:14px 12px;min-height:140px;border-top:3px solid var(--amber)}
+.feasibility-matrix>div.feasible{border-top-color:var(--good)}
+.feasibility-matrix b,.feasibility-matrix strong,.feasibility-matrix span{display:block}
+.feasibility-matrix b{font-size:10px}
+.feasibility-matrix strong{font-size:11px;color:var(--amber);margin:9px 0}
+.feasibility-matrix .feasible strong{color:var(--good)}
+.feasibility-matrix span{font-size:9px;line-height:1.7;color:var(--muted)}
+.conclusion-status{display:inline-block;margin-bottom:16px;padding:8px 12px;border:1px solid #bad3e8;background:var(--tint);color:var(--brand);font-size:11px;font-weight:700}
+.report-toolbar #reportQuality{max-width:560px;line-height:1.5}
+.timeline{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+@media(max-width:1000px){.feasibility-matrix{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){.project-extra summary{align-items:flex-start;flex-wrap:wrap}.project-extra summary span{order:3;width:100%;margin-left:0}.feasibility-matrix{grid-template-columns:1fr}.report-toolbar #reportQuality{max-width:none}.report-paper table{min-width:620px}}
+@media print{.project-extra{display:none}.feasibility-matrix{grid-template-columns:repeat(5,1fr);break-inside:avoid}.feasibility-matrix>div{min-height:0;padding:9px}.report-subheading{break-after:avoid}}
