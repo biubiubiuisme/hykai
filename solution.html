@@ -9,8 +9,8 @@
   <script>document.documentElement.classList.add('access-pending')</script>
   <link rel="stylesheet" href="assets/access-control.css">
   <script src="assets/access-control.js?v=20261019-performance" defer></script>
-  <link rel="stylesheet" href="assets/app.css?v=20261019-autodiscount">
-  <link rel="stylesheet" href="assets/report-upgrade.css?v=20261019-autodiscount">
+  <link rel="stylesheet" href="assets/app.css?v=20261019-costspace">
+  <link rel="stylesheet" href="assets/report-upgrade.css?v=20261019-costspace">
 </head>
 <body>
   <header class="topbar no-print">
@@ -227,8 +227,10 @@
           </div>
           <div class="auto-discount" id="autoDiscount">
             <div><span>模块原价</span><b id="discountOriginal">¥0万</b></div>
-            <div><span>自动优惠</span><b id="discountSaved">-¥0万</b></div>
+            <div><span>报价优惠</span><b id="discountSaved">-¥0万</b></div>
             <div><span>优惠后测算价</span><b id="discountFinal">¥0万</b></div>
+            <label class="discount-control internal-only"><span>报价优惠选项</span><select id="discountMode"><option value="suggested">建议优惠（自动计算）</option><option value="none">原价报价（0%）</option><option value="pct3">统一优惠3%</option><option value="pct5">统一优惠5%</option><option value="pct8">统一优惠8%</option><option value="pct10">统一优惠10%</option><option value="custom">自定义优惠比例</option></select></label>
+            <label class="custom-discount internal-only" id="customDiscountWrap"><span>自定义优惠</span><input id="customDiscountRate" type="number" min="0" max="30" step="0.5" value="12"><em>%</em></label>
             <p id="discountRule">组合优惠会随所选模块自动计算。</p>
           </div>
           <div class="summary-breakdown" id="summaryBreakdown"></div>
@@ -237,6 +239,11 @@
             <button class="primary-btn" id="generateReport">下一步：价值与可行性论证</button>
           </div>
         </div>
+        <section class="internal-cost-panel internal-only" id="internalCostPanel">
+          <div class="internal-cost-head"><div><span>INTERNAL COST VIEW</span><h2>内部成本与报价空间</h2><p>仅供销售内部测算。当前资料主要是区域/代理结算价，不等同于财务实际成本。</p></div><div class="cost-kpis"><div><span>已知结算基线</span><b id="knownCostTotal">¥0万</b></div><div><span>成本完整度</span><b id="costCoverage">0/0项</b></div><div><span>已知部分价差</span><b id="knownPriceSpace">¥0万</b></div></div></div>
+          <div class="cost-warning" id="costWarning"></div>
+          <div class="cost-table-wrap"><table><thead><tr><th>项目</th><th>数量</th><th>客户报价</th><th>内部结算基线</th><th>口径</th></tr></thead><tbody id="costBreakdownRows"></tbody></table></div>
+        </section>
       </section>
 
       <section class="view" id="view-value">
@@ -313,7 +320,7 @@
           <section class="report-section"><h2 id="reportHeading4">四、总体方案——“设备+系统+AI+服务”四位一体</h2><div class="architecture" id="reportArchitecture"><div><span>采集层</span><b>数字切片扫描设备</b></div><i>→</i><div><span>平台层</span><b>全流程与远程协同</b></div><i>→</i><div><span>智能层</span><b>AI 辅助诊断模块</b></div><i>→</i><div><span>保障层</span><b>算力、存储与实施服务</b></div></div><p id="reportSolution"></p><div class="report-gallery" id="reportGallery"></div></section>
           <section class="report-section"><h2>五、项目可行性分析</h2><div class="feasibility-matrix" id="reportFeasibility"></div><p class="report-note">可行性判断基于当前已填写资料；标记为“待补条件”的项目必须在正式立项或采购前完成核验。</p></section>
           <section class="report-section"><h2>六、建设内容与技术参数——按业务量配置，不以设备数量替代能力建设</h2><div class="table-wrap"><table><thead><tr><th>类别</th><th>建设内容</th><th>数量</th><th>关键参数 / 用途</th><th>价格状态</th></tr></thead><tbody id="reportConfigRows"></tbody></table></div></section>
-          <section class="report-section page-break-before"><h2>七、资金需求与五年效益——同时回答「花多少钱」与「为什么值得建」</h2><p id="reportFundingNarrative"></p><div class="budget-highlight"><span>优惠后测算价</span><strong id="reportTotal">¥0 万元</strong><small id="reportPending"></small></div><div class="report-budget-chart" id="reportBudgetChart"></div><div class="table-wrap"><table><thead><tr><th>预算科目</th><th>配置内容</th><th>数量</th><th>单价（万元）</th><th>小计（万元）</th></tr></thead><tbody id="reportBudgetRows"></tbody><tfoot><tr><td colspan="4">模块原价</td><td id="reportOriginalTotal">0</td></tr><tr><td colspan="4">自动优惠（测算）</td><td id="reportDiscountTotal">0</td></tr><tr><td colspan="4">优惠后测算价</td><td id="reportTableTotal">0</td></tr></tfoot></table></div><div class="five-year-report"><div><span>五年累计效益</span><b id="reportFiveYearBenefit">0万元</b></div><div><span>五年净收益</span><b id="reportFiveYearNet">0万元</b></div><div><span>静态回收期</span><b id="reportPayback">未形成</b></div><div><span>五年ROI</span><b id="reportRoi">0%</b></div></div><div class="benefit-story" id="reportBenefitStory"></div><h3 class="report-subheading">五年测算明细</h3><div class="report-cashflow-chart" id="reportCashFlowChart"></div><div class="table-wrap"><table><thead><tr><th>年度</th><th>当年投入</th><th>当年效益</th><th>累计效益</th><th>累计净收益</th></tr></thead><tbody id="reportCashFlowRows"></tbody></table></div><div class="roi-source-report" id="reportRoiSources"></div><p class="report-note" id="reportRoiNote">注：收益参数应由院方依据内部台账核验；本测算未计资金时间价值，不作为财务承诺。</p></section>
+          <section class="report-section page-break-before"><h2>七、资金需求与五年效益——同时回答「花多少钱」与「为什么值得建」</h2><p id="reportFundingNarrative"></p><div class="budget-highlight"><span>优惠后测算价</span><strong id="reportTotal">¥0 万元</strong><small id="reportPending"></small></div><div class="report-budget-chart" id="reportBudgetChart"></div><div class="table-wrap"><table><thead><tr><th>预算科目</th><th>配置内容</th><th>数量</th><th>单价（万元）</th><th>小计（万元）</th></tr></thead><tbody id="reportBudgetRows"></tbody><tfoot><tr><td colspan="4">模块原价</td><td id="reportOriginalTotal">0</td></tr><tr><td colspan="4">报价优惠（测算）</td><td id="reportDiscountTotal">0</td></tr><tr><td colspan="4">优惠后测算价</td><td id="reportTableTotal">0</td></tr></tfoot></table></div><div class="five-year-report"><div><span>五年累计效益</span><b id="reportFiveYearBenefit">0万元</b></div><div><span>五年净收益</span><b id="reportFiveYearNet">0万元</b></div><div><span>静态回收期</span><b id="reportPayback">未形成</b></div><div><span>五年ROI</span><b id="reportRoi">0%</b></div></div><div class="benefit-story" id="reportBenefitStory"></div><h3 class="report-subheading">五年测算明细</h3><div class="report-cashflow-chart" id="reportCashFlowChart"></div><div class="table-wrap"><table><thead><tr><th>年度</th><th>当年投入</th><th>当年效益</th><th>累计效益</th><th>累计净收益</th></tr></thead><tbody id="reportCashFlowRows"></tbody></table></div><div class="roi-source-report" id="reportRoiSources"></div><p class="report-note" id="reportRoiNote">注：收益参数应由院方依据内部台账核验；本测算未计资金时间价值，不作为财务承诺。</p></section>
           <section class="report-section"><h2>八、实施计划——每阶段同时明确任务、里程碑与验收输出</h2><div class="timeline" id="reportTimeline"></div></section>
           <section class="report-section"><h2>九、职责分工——把院方决策链和交付责任写进同一张表</h2><div class="table-wrap"><table><thead><tr><th>参与方</th><th>主要职责</th><th>关键交付</th></tr></thead><tbody id="reportResponsibilityRows"></tbody></table></div></section>
           <section class="report-section"><h2>十、主要风险与应对——根据当前项目缺口动态生成</h2><div class="risk-grid" id="reportRiskGrid"></div></section>
@@ -344,6 +351,6 @@
     <div class="guide-rule"><b>红线</b><span>预算测算不等于正式报价；AI 临床使用不超出现行注册证与说明书范围。</span></div>
     <button class="primary-btn" id="startFromGuide">开始做一份方案</button>
   </dialog>
-  <script src="assets/app.js?v=20261019-autodiscount"></script>
+  <script src="assets/app.js?v=20261019-costspace"></script>
 </body>
 </html>
