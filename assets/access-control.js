@@ -2,12 +2,11 @@
   'use strict';
   const STORAGE_KEY='hykai_access_v2';
   const ACCOUNT_HASH='3496fe33374c731ebf244551962e2a36fbb7f16737f8e9c8a412ee4c18d7e7f7';
-  const SESSION_MS=12*60*60*1000;
 
   function validSession(){
     try{
       const value=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
-      return Boolean(value&&value.granted===true&&Number(value.expires)>Date.now());
+      return Boolean(value&&value.granted===true);
     }catch(_){return false}
   }
 
@@ -51,7 +50,7 @@
         <button class="hykai-access-submit" type="submit">验证并进入</button>
         <p class="hykai-access-error" id="hykaiAccessError" role="alert"></p>
       </form>
-      <div class="hykai-access-foot">验证通过后本设备可连续使用 12 小时。请勿将账号密码发布到公开群或公众平台。</div>
+      <div class="hykai-access-foot">验证通过后，本设备将保持登录，直到主动退出或清理浏览器数据。请勿将账号密码发布到公开群或公众平台。</div>
     </section>`;
     document.body.appendChild(gate);
     const form=gate.querySelector('#hykaiAccessForm');
@@ -67,7 +66,7 @@
       const identity=`${user.value.trim().toLowerCase()}:${password.value}`;
       const hash=await digest(identity);
       if(hash===ACCOUNT_HASH){
-        localStorage.setItem(STORAGE_KEY,JSON.stringify({granted:true,expires:Date.now()+SESSION_MS}));
+        localStorage.setItem(STORAGE_KEY,JSON.stringify({granted:true,account:user.value.trim().toLowerCase()}));
         location.reload();
         return;
       }
