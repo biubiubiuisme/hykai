@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HYKAI · 销售管理（本地演示版）</title>
+  <meta name="description" content="HYKAI销售工作量、医院方案与周会经营数据管理原型。">
+  <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-side">
+      <div class="brand"><img src="assets/huayin-logo-color.png" alt="华银康集团"><div><b>HYKAI CONTROL</b><span>销售管理</span></div></div>
+      <div class="side-label">经营管理</div>
+      <nav class="side-nav">
+        <button class="active" data-screen="overview"><i>01</i>经营总览</button>
+        <button data-screen="sales"><i>02</i>销售工作量</button>
+        <button data-screen="hospitals"><i>03</i>医院方案档案</button>
+        <button data-screen="events"><i>04</i>操作记录</button>
+        <button data-screen="settings"><i>05</i>统计规则</button>
+      </nav>
+      <div class="side-bottom">
+        <div class="data-note"><b>数据口径</b>医院经营数据来自 2026-10-19 提交的业务表，汇总截止 2026-10-16；销售登录、生成、浏览和导出为原型模拟数据。</div>
+        <a class="back-link" href="index.html#public" onclick="if(parent!==window){parent.postMessage({type:'hykai:navigate',portal:'public'},'*');return false}">查看客户展示</a>
+        <a class="back-link" href="index.html#sales" onclick="if(parent!==window){parent.postMessage({type:'hykai:navigate',portal:'sales',salesView:'project'},'*');return false}">返回医院方案</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="topbar">
+        <div class="top-copy"><b id="topTitle">经营总览</b><span>经营数据截止 2026-10-16 · 本地演示环境</span></div>
+        <div class="top-tools"><input class="search" id="globalSearch" placeholder="搜索医院或负责人" aria-label="搜索医院或负责人"><select class="filter" id="globalRegion" aria-label="区域筛选"><option value="all">全部区域</option><option>华东</option><option>华北</option><option>华南三省</option><option>华中</option><option>华西</option><option>广东经营区</option></select><select class="period" aria-label="数据周期" title="当前原型录入截至2026-10-16的经营汇总"><option>本周（截至1016）</option></select><div class="account"><span class="avatar">尚</span><div><b>尚滨</b><small>全国管理员</small></div></div></div>
+      </header>
+
+      <section class="screen active" id="screen-overview">
+        <div class="page-head"><div><div class="eyebrow">MANAGEMENT OVERVIEW</div><h1>本周销售和项目进展</h1><p>同时查看方案制作、客户演示、试用、签约和交付情况。</p></div><span class="demo-flag"><i></i>操作统计为模拟数据</span></div>
+        <div class="kpi-grid">
+          <article class="kpi featured"><span>本周活跃销售</span><strong>23</strong><small>占已开通账号 76.7%</small></article>
+          <article class="kpi"><span>新增医院方案</span><strong>18</strong><small class="up">较上周 +5</small></article>
+          <article class="kpi"><span>客户演示</span><strong>31</strong><small class="up">有效打开 24 次</small></article>
+          <article class="kpi"><span>方案导出</span><strong>16</strong><small>PDF 11 · 打印 5</small></article>
+          <article class="kpi"><span>7天无推进</span><strong>29</strong><small class="warn">需区域负责人核查</small></article>
+        </div>
+        <div class="grid-2">
+          <article class="panel"><div class="panel-head"><div><h2>六大区域经营进度——华东签约19家领先，广东经营区年度缺口47家</h2><p>年度任务沿用既有经营规划；签约和试用更新至 2026-10-16</p></div><button class="text-btn" data-screen-jump="hospitals">查看医院</button></div><div class="region-bars" id="regionBars"></div></article>
+          <article class="panel"><div class="panel-head"><div><h2>本周需要处理的事项</h2><p>优先看影响成交、交付和库存的问题</p></div></div><div class="alert-list"><div class="alert danger"><i></i><div><b>78家医院处于试用中</b><span>74家本地试用、4家纯线上试用；累计曾试用89家</span></div><em>推进转化</em></div><div class="alert"><i></i><div><b>17份合同交付未完成或未填写</b><span>待交付14份、交付中2份、未填写1份</span></div><em>检查交付</em></div><div class="alert"><i></i><div><b>优云高通量扫描仪库存为0</b><span>库存表注明“没有签署新合同，没有库存”</span></div><em>关注供货</em></div></div></article>
+        </div>
+        <div class="section-title"><h2>本周销售推进概览</h2><span>点击销售工作量查看明细</span></div>
+        <div class="table-card"><table class="data-table"><thead><tr><th>负责人</th><th>区域</th><th>活跃天数</th><th>医院方案</th><th>客户演示</th><th>有效推进</th><th>结果事项</th><th>工作量指数</th></tr></thead><tbody id="overviewSales"></tbody></table></div>
+      </section>
+
+      <section class="screen" id="screen-sales">
+        <div class="page-head"><div><div class="eyebrow">SALES EFFECTIVENESS</div><h1>销售工作量</h1><p>登录次数只用于了解工具是否在使用，不直接计入绩效；项目实际推进情况更重要。</p></div><button class="secondary" id="explainScore">查看计分口径</button></div>
+        <div class="panel"><div class="work-summary"><div><span>建议管理结论</span><b style="font-family:inherit;font-size:16px;line-height:1.45">23人活跃，但有效推进集中在8人</b></div><div><span>登录次数</span><b>186</b></div><div><span>实质性方案更新</span><b>27</b></div><div><span>客户有效打开</span><b>24</b></div><div><span>阶段推进</span><b>14</b></div></div></div>
+        <div class="work-definition" id="scoreDefinition"><b>默认口径：</b>新建方案3分，实质性修改2分，客户有效打开2分，生成/导出1分，更新下一步计划1分，进入试用/预算/签约等阶段5分；同一医院同一天重复操作只计算一次。</div>
+        <div class="section-title"><h2>人员明细</h2><span>原型模拟数据 · 可按区域筛选</span></div>
+        <div class="table-card"><table class="data-table"><thead><tr><th>负责人</th><th>所属区域</th><th>登录</th><th>方案新建/更新</th><th>客户演示</th><th>下一步计划</th><th>阶段推进</th><th>指数</th><th>管理判断</th></tr></thead><tbody id="salesRows"></tbody></table></div>
+      </section>
+
+      <section class="screen" id="screen-hospitals">
+        <div class="page-head"><div><div class="eyebrow">HOSPITAL DOSSIER</div><h1>医院项目档案</h1><p>每家医院集中查看周会数据、方案版本和客户访问记录。</p></div><a class="primary" href="index.html" style="text-decoration:none">新建医院方案</a></div>
+        <div class="hospital-tools"><input class="search" id="hospitalSearch" placeholder="搜索医院、负责人或城市"><select class="filter" id="hospitalStatus"><option value="all">全部状态</option><option value="trial">试用客户</option><option value="signed">签约客户</option></select></div>
+        <div class="hospital-grid" id="hospitalGrid"></div>
+      </section>
+
+      <section class="screen" id="screen-events">
+        <div class="page-head"><div><div class="eyebrow">AUDIT TRAIL</div><h1>操作记录</h1><p>记录谁在什么时间更新了哪家医院、哪个方案版本。正式上线后自动记录，销售不需要重复填表。</p></div><span class="demo-flag"><i></i>以下为模拟数据</span></div>
+        <div class="table-card"><table class="data-table"><thead><tr><th>时间</th><th>销售</th><th>医院</th><th>动作</th><th>对象</th><th>结果</th><th>计分</th></tr></thead><tbody id="eventRows"></tbody></table></div>
+      </section>
+
+      <section class="screen" id="screen-settings">
+        <div class="page-head"><div><div class="eyebrow">GOVERNANCE RULES</div><h1>统计和权限规则</h1><p>正式开发前，需要由管理层确认这些规则。</p></div></div>
+        <div class="settings-note" id="settingsNotice" role="status">本地原型设置：开关状态仅保存在当前浏览器，用于确认管理规则；正式上线后需由后台权限与审计服务执行。</div>
+        <div class="settings-grid"><article class="setting-card"><h3>登录只用于了解使用情况</h3><p>记录登录日期、最近使用时间和连续未登录天数，不把登录次数直接换成绩效分。</p><div class="switch-line"><span>记录登录事件</span><button class="switch active" type="button" data-setting="loginEvent" aria-label="记录登录事件" aria-pressed="true"></button></div></article><article class="setting-card"><h3>重复动作自动去重</h3><p>同一销售、同一医院、同一动作在同一天最多计一次，避免反复打开或导出形成虚假工作量。</p><div class="switch-line"><span>启用日级去重</span><button class="switch active" type="button" data-setting="dailyDedup" aria-label="启用日级去重" aria-pressed="true"></button></div></article><article class="setting-card"><h3>按角色控制查看范围</h3><p>销售看本人，区域负责人看本区域，事业线管理员看全国。下载和分享保留审计记录。</p><div class="switch-line"><span>启用分级权限</span><button class="switch active" type="button" data-setting="roleScope" aria-label="启用分级权限" aria-pressed="true"></button></div></article><article class="setting-card"><h3>客户链接设有效期</h3><p>客户演示链接默认7天失效，可加医院名称和销售姓名水印，禁止公开索引。</p><div class="switch-line"><span>启用安全分享</span><button class="switch active" type="button" data-setting="secureShare" aria-label="启用安全分享" aria-pressed="true"></button></div></article></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drawer-mask" id="drawerMask"><aside class="drawer"><button class="drawer-close" id="drawerClose" aria-label="关闭">×</button><div id="drawerContent"></div></aside></div>
+  <script src="assets/admin.js"></script>
+</body>
+</html>
