@@ -1,7 +1,7 @@
 (()=>{
   'use strict';
-  const STORAGE_KEY='hykai_access_v1';
-  const ACCESS_HASH='714ccb02897128e85c816459d85c272236db3601be6ec1d2141a72ca7249df13';
+  const STORAGE_KEY='hykai_access_v2';
+  const ACCOUNT_HASH='3496fe33374c731ebf244551962e2a36fbb7f16737f8e9c8a412ee4c18d7e7f7';
   const SESSION_MS=12*60*60*1000;
 
   function validSession(){
@@ -44,32 +44,35 @@
     gate.innerHTML=`<section class="hykai-access-card" aria-labelledby="accessTitle">
       <div class="hykai-access-brand"><img src="assets/huayin-logo-color.png" alt="华银康集团"><span></span><div><b>HYKAI</b><small>智慧病理方案平台</small></div></div>
       <h1 id="accessTitle">访问验证</h1>
-      <p>本平台仅供授权的华银康员工及客户使用。请输入访问口令继续。</p>
+      <p>本平台仅供授权的华银康员工及客户使用。请输入账号和密码继续。</p>
       <form id="hykaiAccessForm">
-        <label class="hykai-access-field"><span>访问口令</span><input id="hykaiAccessCode" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required></label>
+        <label class="hykai-access-field"><span>账号</span><input id="hykaiAccessUser" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+        <label class="hykai-access-field" style="margin-top:12px"><span>密码</span><input id="hykaiAccessPassword" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required></label>
         <button class="hykai-access-submit" type="submit">验证并进入</button>
         <p class="hykai-access-error" id="hykaiAccessError" role="alert"></p>
       </form>
-      <div class="hykai-access-foot">验证通过后本设备可连续使用 12 小时。请勿将访问口令发布到公开群或公众平台。</div>
+      <div class="hykai-access-foot">验证通过后本设备可连续使用 12 小时。请勿将账号密码发布到公开群或公众平台。</div>
     </section>`;
     document.body.appendChild(gate);
     const form=gate.querySelector('#hykaiAccessForm');
-    const input=gate.querySelector('#hykaiAccessCode');
+    const user=gate.querySelector('#hykaiAccessUser');
+    const password=gate.querySelector('#hykaiAccessPassword');
     const error=gate.querySelector('#hykaiAccessError');
     const submit=gate.querySelector('.hykai-access-submit');
-    input.focus();
+    user.focus();
     form.addEventListener('submit',async event=>{
       event.preventDefault();
       submit.disabled=true;
       error.textContent='';
-      const hash=await digest(input.value.trim());
-      if(hash===ACCESS_HASH){
+      const identity=`${user.value.trim().toLowerCase()}:${password.value}`;
+      const hash=await digest(identity);
+      if(hash===ACCOUNT_HASH){
         localStorage.setItem(STORAGE_KEY,JSON.stringify({granted:true,expires:Date.now()+SESSION_MS}));
         location.reload();
         return;
       }
-      error.textContent='口令不正确，请核对后重试。';
-      input.select();
+      error.textContent='账号或密码不正确，请核对后重试。';
+      password.select();
       submit.disabled=false;
     });
   }
