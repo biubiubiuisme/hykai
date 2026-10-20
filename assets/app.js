@@ -8,12 +8,12 @@ const catalog = [
   {id:'scan240',group:'数字化采集设备',name:'240片全自动数字病理切片扫描仪',model:'UISCAN-240',unit:'台',price:50,status:'reference',image:'assets/materials/image4.png',spec:'单次加载240片，可扩展至480片；20×≤0.24μm/pixel、40×≤0.12μm/pixel；15×15mm区域扫描20×≤35秒、40×≤50秒；设备使用年限≥10年',source:'技术参数来自2026-10-08资料表P-004；50万元为2026-01-15医院自建比较价，不是单机销售报价'},
   {id:'scan300',group:'数字化采集设备',name:'300片数字病理切片扫描仪',model:'英特美迪组合式设备（正式型号待确认）',unit:'台',price:0,status:'pending',image:'assets/materials/image15.jpeg',spec:'扫描主机+高通量传输系统；单次加载1—300片；20×≤0.24μm/pixel、40×≤0.12μm/pixel；20×≤45秒、40×≤60秒；TRON格式并提供SDK',source:'2026-10-08资料表新增设备；正式型号、生产企业与单机预算价待确认'},
   {id:'scan20',group:'数字化采集设备',name:'20片数字病理切片扫描仪',model:'SZ-20',unit:'台',price:20,status:'reference',image:'assets/materials/image23.png',spec:'装载20片；Sony 1200万像素CMOS；20×0.344μm/pixel、40×0.172μm/pixel；15×15mm区域20×≤75秒、40×≤120秒',source:'技术参数来自2026-10-08资料表P-005；20万元为2026-01-15医院自建比较价，不是单机销售报价'},
-  {id:'workflow_module',group:'软件与协同系统',name:'病理全流程信息管理系统功能模块',model:'共18个功能模块',unit:'模块',price:5,status:'confirmed',max:18,spec:'覆盖临床申请、报告存档和科室管理等全流程；按实际选用模块数量计价，不包含AI辅助分析和结构化报告系统',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；5万元/模块，最多18个模块'},
+  {id:'workflow_module',group:'软件与协同系统',name:'病理全流程信息管理系统功能模块',model:'共18个功能模块',unit:'模块',price:5,status:'confirmed',max:18,image:'assets/materials/image3.png',spec:'覆盖临床申请、报告存档和科室管理等全流程；按实际选用模块数量计价，不包含AI辅助分析和结构化报告系统',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；5万元/模块，最多18个模块'},
   {id:'remote_module',group:'软件与协同系统',name:'远程病理诊断系统功能模块',model:'共9个功能模块',unit:'模块',price:5,status:'confirmed',max:9,image:'assets/materials/image1.png',spec:'覆盖标本送检至公共管理的远程病理业务；按实际选用模块数量计价',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；5万元/模块，最多9个模块'},
   {id:'structured',group:'软件与协同系统',name:'病理结构化报告系统基础平台',model:'38个专业级疾病诊断模板可选',unit:'套',price:15,status:'confirmed',max:1,image:'assets/materials/structured-report-overview.svg',spec:'基础平台费15万元；诊断模板另按实际选用数量计价',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；计价公式15万元+5万元×模板数N'},
-  {id:'structured_template',group:'软件与协同系统',name:'病理结构化报告诊断模板',model:'共38个专业级疾病诊断模板',unit:'模板',price:5,status:'confirmed',max:38,spec:'与结构化报告系统基础平台配套使用，按实际选用模板数量计价',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；5万元/模板'},
-  {id:'structured_data',group:'软件与协同系统',name:'病理结构化数据平台',model:'结构化系统配套模块',unit:'套',price:5,status:'confirmed',max:1,spec:'与病理结构化报告系统配套使用，用于结构化数据汇总与应用',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；加价5万元'},
-  {id:'structured_analysis',group:'软件与协同系统',name:'病理医生诊断情况分析中心',model:'结构化系统配套模块',unit:'套',price:5,status:'confirmed',max:1,spec:'与病理结构化报告系统配套使用，用于诊断情况分析',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；加价5万元'},
+  {id:'structured_template',group:'软件与协同系统',name:'病理结构化报告诊断模板',model:'共38个专业级疾病诊断模板',unit:'模板',price:5,status:'confirmed',max:38,image:'assets/materials/image7.png',spec:'与结构化报告系统基础平台配套使用，按实际选用模板数量计价',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；5万元/模板'},
+  {id:'structured_data',group:'软件与协同系统',name:'病理结构化数据平台',model:'结构化系统配套模块',unit:'套',price:5,status:'confirmed',max:1,image:'assets/materials/image2.png',spec:'与病理结构化报告系统配套使用，用于结构化数据汇总与应用',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；加价5万元'},
+  {id:'structured_analysis',group:'软件与协同系统',name:'病理医生诊断情况分析中心',model:'结构化系统配套模块',unit:'套',price:5,status:'confirmed',max:1,image:'assets/materials/image6.png',spec:'与病理结构化报告系统配套使用，用于诊断情况分析',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；加价5万元'},
   {id:'teaching_local',group:'软件与协同系统',name:'智慧病理教学平台·本地部署',model:'9大功能中心',unit:'套',price:80,status:'confirmed',max:1,spec:'本科生教学和规培教学平台，含教学、模拟诊断、AI、切片、题库、考试、视频、资讯、系统管理9大功能中心；不含教学内容资源',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；80万元，不含内容'},
   {id:'teaching_cloud',group:'软件与协同系统',name:'智慧病理教学平台·云端基础版',model:'30人以内，不含资源',unit:'年',price:10,status:'confirmed',max:1,spec:'云端教学平台年度使用费，包含不超过30名用户，不含教学内容资源',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；10万元/年，30人以内'},
   {id:'teaching_seat',group:'软件与协同系统',name:'智慧病理教学平台·超额用户',model:'超过30人的增量用户',unit:'人/年',price:.1,status:'confirmed',spec:'仅与云端教学平台配套使用；填写超过30人的人数，不填写总人数',source:'《华银康数智病理系统清单及产品设计20261015》系统清单；每增加1人增加0.1万元/人/年'},
@@ -380,8 +380,36 @@ function updateAll(){
   renderInternalCost(t);renderAudit();updateAssessment();renderReport();
 }
 
+function catalogVisualType(x){
+  if(x.group==='智慧病理科服务套餐')return'package';
+  if(x.group==='软件与协同系统')return x.id.startsWith('teaching')?'teaching':'system';
+  if(x.group==='AI辅助诊断模块'||x.group==='质量控制模块')return'ai';
+  if(x.group==='算力与存储')return'compute';
+  return'service';
+}
+function catalogVisualIcon(type){
+  const icons={
+    package:'<rect x="8" y="9" width="16" height="16" rx="3"/><rect x="40" y="9" width="16" height="16" rx="3"/><rect x="8" y="39" width="16" height="16" rx="3"/><rect x="40" y="39" width="16" height="16" rx="3"/><path d="M24 17h16M16 25v14M48 25v14M24 47h16"/>',
+    system:'<rect x="7" y="10" width="50" height="36" rx="5"/><path d="M18 55h28M32 46v9M15 20h34M16 29h14M16 36h24"/>',
+    teaching:'<path d="M8 14c10-4 18-2 24 3v38c-6-5-14-7-24-3zM56 14c-10-4-18-2-24 3v38c6-5 14-7 24-3z"/><path d="M15 25h10M15 33h10M39 25h10M39 33h10"/>',
+    ai:'<rect x="8" y="10" width="38" height="38" rx="6"/><circle cx="27" cy="29" r="9"/><path d="M46 45l10 10M17 29h20M27 19v20"/>',
+    compute:'<rect x="8" y="8" width="48" height="14" rx="3"/><rect x="8" y="26" width="48" height="14" rx="3"/><rect x="8" y="44" width="48" height="14" rx="3"/><circle cx="48" cy="15" r="2"/><circle cx="48" cy="33" r="2"/><circle cx="48" cy="51" r="2"/>',
+    service:'<circle cx="16" cy="20" r="7"/><circle cx="48" cy="20" r="7"/><circle cx="32" cy="48" r="7"/><path d="M22 24l7 17M42 24l-7 17M23 20h18"/>'
+  };
+  return `<svg viewBox="0 0 64 64" aria-hidden="true"><g>${icons[type]||icons.service}</g></svg>`;
+}
+function catalogFallbackVisual(x){
+  const type=catalogVisualType(x),eyebrow={package:'服务方案',system:'系统功能',teaching:'教学平台',ai:'辅助诊断',compute:'算力存储',service:'实施服务'}[type];
+  return `<div class="catalog-placeholder catalog-placeholder-${type}" role="img" aria-label="${x.name}功能示意">${catalogVisualIcon(type)}<div><small>${eyebrow}</small><b>${x.name}</b><span>${x.model}</span></div><em>功能示意</em></div>`;
+}
+function catalogMedia(x){
+  if(!x.image)return catalogFallbackVisual(x);
+  const label=x.group==='数字化采集设备'?'设备资料图':'系统界面';
+  return `<div class="catalog-image-wrap"><img class="catalog-image" data-catalog-id="${x.id}" src="${x.image}" alt="${x.name}" loading="lazy"><span>${label}</span></div>`;
+}
 function renderCatalogCards(){
-  $('#catalogCards').innerHTML=catalog.map(x=>`<article class="catalog-card">${x.image?`<img class="catalog-image" src="${x.image}" alt="${x.name}" loading="lazy">`:''}<div class="catalog-card-head"><div><h3>${x.name}</h3><small>${x.model}</small></div><span class="${priceMeta(x).css}">${x.status==='pending'?'价格待确认':priceMeta(x).label+' '+money(x.price)+' 万元'}</span></div><div class="spec-list"><div class="spec-line"><b>计量单位</b><span>${x.unit}</span></div><div class="spec-line"><b>关键参数</b><span>${x.spec}</span></div></div><footer class="internal-only">来源与边界：${x.source}</footer></article>`).join('');
+  $('#catalogCards').innerHTML=catalog.map(x=>`<article class="catalog-card with-visual"><div class="catalog-media">${catalogMedia(x)}</div><div class="catalog-card-head"><div><h3>${x.name}</h3><small>${x.model}</small></div><span class="${priceMeta(x).css}">${x.status==='pending'?'价格待确认':priceMeta(x).label+' '+money(x.price)+' 万元'}</span></div><div class="spec-list"><div class="spec-line"><b>计量单位</b><span>${x.unit}</span></div><div class="spec-line"><b>关键参数</b><span>${x.spec}</span></div></div><footer class="internal-only">来源与边界：${x.source}</footer></article>`).join('');
+  $$('#catalogCards .catalog-image').forEach(img=>img.addEventListener('error',()=>{const item=catalogItem(img.dataset.catalogId);if(item)img.closest('.catalog-media').innerHTML=catalogFallbackVisual(item)}));
 }
 
 const reportPolicies=[
