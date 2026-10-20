@@ -9,8 +9,8 @@
   <script>document.documentElement.classList.add('access-pending')</script>
   <link rel="stylesheet" href="assets/access-control.css">
   <script src="assets/access-control.js?v=20261019-performance" defer></script>
-  <link rel="stylesheet" href="assets/app.css?v=20261019-costspace">
-  <link rel="stylesheet" href="assets/report-upgrade.css?v=20261019-costspace">
+  <link rel="stylesheet" href="assets/app.css?v=20261020-budgetfit">
+  <link rel="stylesheet" href="assets/report-upgrade.css?v=20261020-budgetfit">
 </head>
 <body>
   <header class="topbar no-print">
@@ -139,7 +139,7 @@
       </section>
 
       <section class="view" id="view-recommendation">
-        <div class="page-title"><div><div class="eyebrow">根据医院情况给出建议</div><h1>方案建议</h1><p>建议依据医院类型、切片量、院区数量、部署要求和现有基础生成，销售可以根据现场情况调整。</p></div><div class="recommendation-lock"><span>确认状态</span><strong id="recommendationStatus">待确认</strong></div></div>
+        <div class="page-title"><div><div class="eyebrow">根据医院情况给出建议</div><h1>方案建议</h1><p>建议综合医院类型、切片量、院区数量、部署要求、现有基础和预算上限生成；允许小幅超预算，但默认不超过预算上限的110%。</p></div><div class="recommendation-lock"><span>确认状态</span><strong id="recommendationStatus">待确认</strong></div></div>
         <div class="workflow-map no-print"><span><b>01</b>建档</span><span><b>02</b>诊断</span><span class="active"><b>03</b>推荐</span><span><b>04</b>预算</span><span><b>05</b>论证</span><span><b>06</b>输出</span></div>
         <div class="recommendation-layout">
           <article class="recommended-path">
@@ -153,7 +153,7 @@
           </article>
           <aside class="recommendation-side">
             <div class="decision-basis"><span>建议依据</span><div id="decisionBasis"></div></div>
-            <div class="approval-gates internal-only"><b>进入预算前需确认</b><ul><li>日均切片量及高峰系数</li><li>院内接口与历史数据范围</li><li>AI模块临床使用边界</li><li>预算方式：设备采购或服务方案</li></ul></div>
+            <div class="approval-gates internal-only"><b>进入预算前需确认</b><ul><li>日均切片量及高峰系数</li><li>院内接口与历史数据范围</li><li>AI模块临床使用边界</li><li>预算上限及10%以内浮动是否可接受</li><li>预算方式：设备采购或服务方案</li></ul></div>
           </aside>
         </div>
         <dialog class="path-dialog" id="pathDialog"><button class="dialog-close" id="closePathDialog" aria-label="关闭">×</button><div class="eyebrow">人工调整</div><h2>选择其他方案</h2><p>可以根据院方要求调整，调整原因会保存在项目记录中。</p><div class="path-choice" id="pathChoice"></div><label>调整原因<textarea id="pathOverrideReason" rows="3" placeholder="例如：院方已明确指定国产算力方案"></textarea></label><button class="primary-btn" id="confirmPathOverride" type="button">确认调整</button></dialog>
@@ -351,6 +351,6 @@
     <div class="guide-rule"><b>红线</b><span>预算测算不等于正式报价；AI 临床使用不超出现行注册证与说明书范围。</span></div>
     <button class="primary-btn" id="startFromGuide">开始做一份方案</button>
   </dialog>
-  <script src="assets/app.js?v=20261019-costspace"></script>
+  <script src="assets/app.js?v=20261020-budgetfit"></script>
 </body>
 </html>
