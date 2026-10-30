@@ -5,7 +5,7 @@
     if(started)return;
     started=true;
     load('assets/vendor/d3.v7.min.js?v=20261019-performance')
-      .then(()=>load('assets/public-map.js?v=20261030-backendlogic'))
+      .then(()=>load('assets/public-map.js?v=20261030-uploadcard'))
       .catch(()=>{started=false});
   }
   const target=document.querySelector('#customers');
