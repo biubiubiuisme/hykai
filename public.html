@@ -110,7 +110,7 @@
   <article class="fusion-card"><div class="fusion-card-head"><b>装机试用</b><span class="fusion-badge">业务表口径</span></div><div class="fusion-stats"><div><strong>82</strong><small>完成装机试用</small></div><div><strong>64,322</strong><small>业务表累计上传</small></div><div><strong>77</strong><small>后台匹配账号</small></div></div><p>业务表上传量与后台账号量来源不同；上传单位待源表确认，不与平台切片全量直接相加。</p></article>
   <article class="fusion-card"><div class="fusion-card-head"><b>在线试用候选</b><span class="fusion-badge pending">待归类</span></div><div class="fusion-stats"><div><strong>50</strong><small>后台候选账号</small></div><div><strong>32,874</strong><small>候选账号累计上传</small></div><div><strong>1,205</strong><small>近 7 天上传</small></div></div><p>账号名称尚未全部映射到医院，不能直接表述为“50 家在线试用医院”。</p></article>
 </div>
-<div class="platform-snapshot" aria-label="PanoPath平台真实使用快照"><div><span>PLATFORM TOTAL</span><strong>6,544,069</strong><small>截至 2026-10-30 的平台累计上传量</small></div><div><span>OCTOBER USAGE</span><strong>379,226</strong><small>2026-10-01 至 2026-10-30 上传量</small></div><div><span>DATA GOVERNANCE</span><strong>2026-10-30 09:10 PDT</strong><small>含内部实验室及其他合作账号，不等于客户数，也不与前三类相加</small></div></div>
+<div class="platform-snapshot" aria-label="PanoPath平台真实使用快照"><div><span>PLATFORM ACCOUNTS</span><strong>3,003</strong><small>后台机构账号总数，含内部实验室、会议及合作账号</small></div><div><span>ACTIVE ORGANIZATIONS</span><strong>2,096</strong><small>后台累计上传记录大于 0 的机构账号</small></div><div><span>12-MONTH UPLOADS</span><strong>4,058,694</strong><small>2025-11-05 至 2026-10-30 切片记录；提取于 2026-10-30</small></div></div>
 </section>
 
 <section class="section" id="rnd"><!--rndv3-->
@@ -516,13 +516,13 @@
 <section class="section" id="customers"><!--CUSTV3-->
   <div class="section-head">
     <div><div class="kicker">NATIONAL REACH &amp; CUSTOMER PORTFOLIO</div><h2>目前覆盖 26 个省级区域</h2></div>
-    <div class="section-note">点击地图上的省份，可以查看对应客户。名单优先显示三甲医院和已列入复旦版2023年度中国医院综合排行榜的医院，同一档位不分先后。地图不显示合同金额和内部推进情况。</div>
+    <div class="section-note">本区只展示可核验到省份的客户明细，不与平台账号相加。点击地图上的省份，可以查看对应客户；地图不显示合同金额和内部推进情况。</div>
   </div>
 
-  <div class="map-grid"><div class="panel map-wrap"><div class="map-caption"><b>全国服务版图</b><br>颜色越深，省级项目覆盖记录越多</div><svg id="map" viewBox="0 0 860 500" role="img" aria-label="全国项目覆盖地图"></svg><div class="map-legend"><span>低</span><i class="swatch"></i><span>高</span><span>· 26省级区域</span></div></div>
-<aside class="panel province-info"><div class="label">PROVINCE SNAPSHOT</div><h3 id="pname">全国</h3><p id="pdesc">展示资料明细中的客户名单；点击左侧省份可联动筛选</p><div class="split"><div><b id="ptotal">129</b><small>项目记录</small></div><div><b id="pvolume">52,947</b><small>已核验地图上传</small></div><div><b class="stage-word" id="pstage">全国覆盖</b><small>明细口径</small></div></div><div class="ranking" id="ranking"></div></aside></div>
+  <div class="map-grid"><div class="panel map-wrap"><div class="map-caption"><b>全国客户版图</b><br>颜色越深，可核验客户机构越多</div><svg id="map" viewBox="0 0 860 500" role="img" aria-label="全国客户覆盖地图"></svg><div class="map-legend"><span>低</span><i class="swatch"></i><span>高</span><span>· 26省级区域</span></div></div>
+<aside class="panel province-info"><div class="label">PROVINCE SNAPSHOT</div><h3 id="pname">全国</h3><p id="pdesc">展示可核验客户明细；点击左侧省份可联动筛选</p><div class="split"><div><b id="ptotal">127</b><small>客户明细机构</small></div><div><b id="pvolume">24</b><small>已核验三甲</small></div><div><b class="stage-word" id="pstage">44 / 85</b><small>签约 / 试用</small></div></div><div class="ranking" id="ranking"></div></aside></div>
 
-  <div class="panel client-panel" id="clientPanel"><div class="client-head"><div><div class="kicker">VERIFIED CUSTOMER LIST</div><h3 id="clientTitle">全国客户名单</h3></div><div class="client-summary"><span>机构 127 家</span><span>项目记录 129 条</span><span class="three-a">已核验三甲 24 家</span><span class="analysis">地图已核验上传 52,947</span></div></div><div class="client-tools"><button class="client-filter active" data-filter="all">全部客户</button><button class="client-filter" data-filter="threeA">三甲医院</button><button class="client-filter" data-filter="signed">签约客户</button><button class="client-filter" data-filter="trial">试用客户</button><button class="client-filter" id="clearProvince">清除省份筛选</button></div><div class="client-grid" id="clientGrid"></div><button class="client-more" id="clientMore">展开全部客户</button><div class="client-source">客户地图暂沿用 2026-10-19 已核验明细，避免将《智慧病理业务管理表20261030.xlsx》中待装机、退单及重复记录直接对外展示。顶部经营数据已按 2026-10-30 版本更新；客户地图待签约汇总与明细差异确认后整表替换。三甲等级沿用已核验资料，新增医院未核验前不标注三甲。业务表累计上传 64,322 的单位仍待源表确认，因此未覆盖地图中的 52,947 已核验明细。</div></div>
+  <div class="panel client-panel" id="clientPanel"><div class="client-head"><div><div class="kicker">VERIFIED CUSTOMER LIST</div><h3 id="clientTitle">全国客户名单</h3></div><div class="client-summary"><span>客户明细 127 家</span><span>签约 44 家</span><span>试用 85 家</span><span class="three-a">已核验三甲 24 家</span></div></div><div class="client-tools"><button class="client-filter active" data-filter="all">全部客户</button><button class="client-filter" data-filter="threeA">三甲医院</button><button class="client-filter" data-filter="signed">签约客户</button><button class="client-filter" data-filter="trial">试用客户</button><button class="client-filter" id="clearProvince">清除省份筛选</button></div><div class="client-grid" id="clientGrid"></div><button class="client-more" id="clientMore">展开全部客户</button><div class="client-source">数据口径分开计算：平台后台截至 2026-10-30 有 3,003 个机构账号，其中 2,096 个有上传记录；2025-11-05 至 2026-10-30 共 4,058,694 条切片记录。客户地图为经资料核验的 127 家机构，覆盖 26 个省级区域，其中签约 44 家、试用 85 家，2 家同时属于签约与试用；平台账号、客户机构和签约/试用状态不相加。三甲等级沿用已核验资料，未核验前不标注三甲。</div></div>
 </section>
 
 <section class="section" id="packages"><!--PKGV3-->
@@ -563,7 +563,7 @@
 <div class="footer">广州华银康医疗集团股份有限公司 · 智慧病理服务价值看板</div>
 </main>
 <div class="map-tooltip" id="mapTooltip"></div>
-<script src="assets/public-map-loader.js?v=20261019-performance" defer></script>
+<script src="assets/public-map-loader.js?v=20261030-backendlogic" defer></script>
 <!--UXBODY--><div id="ux-progress"></div>
 <button id="ux-top" aria-label="回到顶部"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 5l-7 7h4.2v7h5.6v-7H19z" fill="currentColor"/></svg></button>
 <style>
