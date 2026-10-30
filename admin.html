@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>HYKAI · 销售管理（本地演示版）</title>
+  <title>HYKAI · 销售管理</title>
   <meta name="description" content="HYKAI销售工作量、医院方案与周会经营数据管理原型。">
   <script>document.documentElement.classList.add('access-pending')</script>
   <link rel="stylesheet" href="assets/access-control.css">
@@ -24,7 +24,7 @@
         <button data-screen="settings"><i>05</i>统计规则</button>
       </nav>
       <div class="side-bottom">
-        <div class="data-note"><b>数据口径</b>医院经营数据来自 2026-10-19 提交的业务表，汇总截止 2026-10-16；销售登录、生成、浏览和导出为原型模拟数据。</div>
+        <div class="data-note"><b>数据口径</b>签约、试用、交付和设备来自《智慧病理业务管理表20261030.xlsx》；平台使用量来自 PanoPath AI 后台，提取于 2026-10-30 08:41 PDT。销售登录、浏览和导出仍为模拟数据，不用于绩效。</div>
         <a class="back-link" href="index.html#public" onclick="if(parent!==window){parent.postMessage({type:'hykai:navigate',portal:'public'},'*');return false}">查看客户展示</a>
         <a class="back-link" href="index.html#sales" onclick="if(parent!==window){parent.postMessage({type:'hykai:navigate',portal:'sales',salesView:'project'},'*');return false}">返回医院方案</a>
       </div>
@@ -32,22 +32,22 @@
 
     <main class="admin-main">
       <header class="topbar">
-        <div class="top-copy"><b id="topTitle">经营总览</b><span>经营数据截止 2026-10-16 · 本地演示环境</span></div>
-        <div class="top-tools"><input class="search" id="globalSearch" placeholder="搜索医院或负责人" aria-label="搜索医院或负责人"><select class="filter" id="globalRegion" aria-label="区域筛选"><option value="all">全部区域</option><option>华东</option><option>华北</option><option>华南三省</option><option>华中</option><option>华西</option><option>广东经营区</option></select><select class="period" aria-label="数据周期" title="当前原型录入截至2026-10-16的经营汇总"><option>本周（截至1016）</option></select><div class="account"><span class="avatar">尚</span><div><b>尚滨</b><small>全国管理员</small></div></div></div>
+        <div class="top-copy"><b id="topTitle">经营总览</b><span>业务表版本 2026-10-30 · 平台提取 2026-10-30 08:41 PDT</span></div>
+        <div class="top-tools"><input class="search" id="globalSearch" placeholder="搜索医院或负责人" aria-label="搜索医院或负责人"><select class="filter" id="globalRegion" aria-label="区域筛选"><option value="all">全部区域</option><option>华东</option><option>华北</option><option>华南三省</option><option>华中</option><option>华西</option><option>广东经营区</option></select><select class="period" aria-label="数据周期" title="业务表文件版本2026-10-30"><option>2026-10-30快照</option></select><div class="account"><span class="avatar">尚</span><div><b>尚滨</b><small>全国管理员</small></div></div></div>
       </header>
 
       <section class="screen active" id="screen-overview">
-        <div class="page-head"><div><div class="eyebrow">MANAGEMENT OVERVIEW</div><h1>本周销售和项目进展</h1><p>同时查看方案制作、客户演示、试用、签约和交付情况。</p></div><span class="demo-flag"><i></i>操作统计为模拟数据</span></div>
+        <div class="page-head"><div><div class="eyebrow">MANAGEMENT OVERVIEW</div><h1>业务数据与平台使用快照</h1><p>签约、试用和交付看业务表，真实切片使用量看 PanoPath AI 后台。</p></div><span class="demo-flag"><i></i>网站操作统计仍为模拟数据</span></div>
         <div class="kpi-grid">
-          <article class="kpi featured"><span>本周活跃销售</span><strong>23</strong><small>占已开通账号 76.7%</small></article>
-          <article class="kpi"><span>新增医院方案</span><strong>18</strong><small class="up">较上周 +5</small></article>
-          <article class="kpi"><span>客户演示</span><strong>31</strong><small class="up">有效打开 24 次</small></article>
-          <article class="kpi"><span>方案导出</span><strong>16</strong><small>PDF 11 · 打印 5</small></article>
-          <article class="kpi"><span>7天无推进</span><strong>29</strong><small class="warn">需区域负责人核查</small></article>
+          <article class="kpi featured"><span>当前有效签约</span><strong>44</strong><small>47 条累计签约，减退单 3 条</small></article>
+          <article class="kpi"><span>累计完成装机试用</span><strong>82</strong><small class="up">逐行复核口径</small></article>
+          <article class="kpi"><span>试用累计上传</span><strong>64,322</strong><small>业务表汇总，非平台全量</small></article>
+          <article class="kpi"><span>试用超期未处置</span><strong>28</strong><small class="warn">需区域负责人核查</small></article>
+          <article class="kpi"><span>近一年平台切片</span><strong>405.8万</strong><small>2025-11-05 至 2026-10-30</small></article>
         </div>
         <div class="grid-2">
-          <article class="panel"><div class="panel-head"><div><h2>六大区域经营进度——华东签约19家领先，广东经营区年度缺口47家</h2><p>年度任务沿用既有经营规划；签约和试用更新至 2026-10-16</p></div><button class="text-btn" data-screen-jump="hospitals">查看医院</button></div><div class="region-bars" id="regionBars"></div></article>
-          <article class="panel"><div class="panel-head"><div><h2>本周需要处理的事项</h2><p>优先看影响成交、交付和库存的问题</p></div></div><div class="alert-list"><div class="alert danger"><i></i><div><b>78家医院处于试用中</b><span>74家本地试用、4家纯线上试用；累计曾试用89家</span></div><em>推进转化</em></div><div class="alert"><i></i><div><b>17份合同交付未完成或未填写</b><span>待交付14份、交付中2份、未填写1份</span></div><em>检查交付</em></div><div class="alert"><i></i><div><b>优云高通量扫描仪库存为0</b><span>库存表注明“没有签署新合同，没有库存”</span></div><em>关注供货</em></div></div></article>
+          <article class="panel"><div class="panel-head"><div><h2>六大区域有效签约进度——华东20条领先，广东经营区年度缺口46条</h2><p>年度目标256条；累计签约47条、退单3条，有效44条</p></div><button class="text-btn" data-screen-jump="hospitals">查看医院</button></div><div class="region-bars" id="regionBars"></div></article>
+          <article class="panel"><div class="panel-head"><div><h2>需要处理的数据与项目问题</h2><p>先统一口径，再用于对外展示和绩效统计</p></div></div><div class="alert-list"><div class="alert danger"><i></i><div><b>试用汇总公式漏计新疆2家</b><span>逐行合计82家，原公式仅得到80家；超期数同样少计2家</span></div><em>修正源表</em></div><div class="alert"><i></i><div><b>签约汇总47条，明细51条</b><span>汇总填报退单3条，但明细备注仅能明确识别1条</span></div><em>确认清单</em></div><div class="alert"><i></i><div><b>试用超期未处置28家</b><span>业务表逐行复核口径，需结合实际撤机、转签约和延期情况清理</span></div><em>推进处置</em></div></div></article>
         </div>
         <div class="section-title"><h2>本周销售推进概览</h2><span>点击销售工作量查看明细</span></div>
         <div class="table-card"><table class="data-table"><thead><tr><th>负责人</th><th>区域</th><th>活跃天数</th><th>医院方案</th><th>客户演示</th><th>有效推进</th><th>结果事项</th><th>工作量指数</th></tr></thead><tbody id="overviewSales"></tbody></table></div>
@@ -62,7 +62,7 @@
       </section>
 
       <section class="screen" id="screen-hospitals">
-        <div class="page-head"><div><div class="eyebrow">HOSPITAL DOSSIER</div><h1>医院项目档案</h1><p>每家医院集中查看周会数据、方案版本和客户访问记录。</p></div><a class="primary" href="index.html" style="text-decoration:none">新建医院方案</a></div>
+        <div class="page-head"><div><div class="eyebrow">HOSPITAL DOSSIER</div><h1>医院项目样例档案</h1><p>业务状态已按2026-10-30表格核对；方案版本、客户浏览和登录次数仍为原型模拟数据。</p></div><a class="primary" href="index.html" style="text-decoration:none">新建医院方案</a></div>
         <div class="hospital-tools"><input class="search" id="hospitalSearch" placeholder="搜索医院、负责人或城市"><select class="filter" id="hospitalStatus"><option value="all">全部状态</option><option value="trial">试用客户</option><option value="signed">签约客户</option></select></div>
         <div class="hospital-grid" id="hospitalGrid"></div>
       </section>
