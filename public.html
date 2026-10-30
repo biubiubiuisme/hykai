@@ -516,13 +516,13 @@
 <section class="section" id="customers"><!--CUSTV3-->
   <div class="section-head">
     <div><div class="kicker">NATIONAL REACH &amp; CUSTOMER PORTFOLIO</div><h2>目前覆盖 26 个省级区域</h2></div>
-    <div class="section-note">本区只展示可核验到省份的客户明细，不与平台账号相加。已核验上传为客户明细逐家相加（46 家有数据），与后台平台切片记录分开统计。点击地图上的省份，可以查看对应客户；地图不显示合同金额和内部推进情况。</div>
+    <div class="section-note">本区只展示可核验到省份的客户明细，不与平台账号相加。上传量按机构账号从 PanoPath 后台归集（提取 2026-10-30 09:56 PDT），127 家中 65 家已对上账号；未对上账号的客户不显示上传量，也不与平台总量相加。点击地图上的省份，可以查看对应客户；地图不显示合同金额和内部推进情况。</div>
   </div>
 
   <div class="map-grid"><div class="panel map-wrap"><div class="map-caption"><b>全国客户版图</b><br>颜色越深，可核验客户机构越多</div><svg id="map" viewBox="0 0 860 500" role="img" aria-label="全国客户覆盖地图"></svg><div class="map-legend"><span>低</span><i class="swatch"></i><span>高</span><span>· 26省级区域</span></div></div>
-<aside class="panel province-info"><div class="label">PROVINCE SNAPSHOT</div><h3 id="pname">全国</h3><p id="pdesc">展示可核验客户明细；点击左侧省份可联动筛选</p><div class="split"><div><b id="ptotal">127</b><small>客户明细机构</small></div><div><b id="pvolume">24</b><small>已核验三甲</small></div><div><b class="stage-word" id="pstage">44 / 85</b><small>签约 / 试用</small></div><div><b id="puploads">52,259</b><small>已核验上传</small></div></div><div class="ranking" id="ranking"></div></aside></div>
+<aside class="panel province-info"><div class="label">PROVINCE SNAPSHOT</div><h3 id="pname">全国</h3><p id="pdesc">展示可核验客户明细；点击左侧省份可联动筛选</p><div class="split"><div><b id="ptotal">127</b><small>客户明细机构</small></div><div><b id="pvolume">24</b><small>已核验三甲</small></div><div><b class="stage-word" id="pstage">44 / 85</b><small>签约 / 试用</small></div><div><b id="puploads">28,338</b><small>后台累计上传</small></div></div><div class="ranking" id="ranking"></div></aside></div>
 
-  <div class="panel client-panel" id="clientPanel"><div class="client-head"><div><div class="kicker">VERIFIED CUSTOMER LIST</div><h3 id="clientTitle">全国客户名单</h3></div><div class="client-summary"><span>客户明细 127 家</span><span>签约 44 家</span><span>试用 85 家</span><span class="three-a">已核验三甲 24 家</span><span class="uploads">已核验上传 52,259</span></div></div><div class="client-tools"><button class="client-filter active" data-filter="all">全部客户</button><button class="client-filter" data-filter="threeA">三甲医院</button><button class="client-filter" data-filter="signed">签约客户</button><button class="client-filter" data-filter="trial">试用客户</button><button class="client-filter" id="clearProvince">清除省份筛选</button></div><div class="client-grid" id="clientGrid"></div><button class="client-more" id="clientMore">展开全部客户</button><div class="client-source">数据口径分开计算：平台后台截至 2026-10-30 有 3,003 个机构账号，其中 2,096 个有上传记录；2025-11-05 至 2026-10-30 共 4,058,694 条切片记录。客户地图为经资料核验的 127 家机构，覆盖 26 个省级区域，其中签约 44 家、试用 85 家，2 家同时属于签约与试用；平台账号、客户机构和签约/试用状态不相加。三甲等级沿用已核验资料，未核验前不标注三甲。</div></div>
+  <div class="panel client-panel" id="clientPanel"><div class="client-head"><div><div class="kicker">VERIFIED CUSTOMER LIST</div><h3 id="clientTitle">全国客户名单</h3></div><div class="client-summary"><span>客户明细 127 家</span><span>签约 44 家</span><span>试用 85 家</span><span class="three-a">已核验三甲 24 家</span><span class="uploads">后台已归集 65 家 · 28,338 条</span></div></div><div class="client-tools"><button class="client-filter active" data-filter="all">全部客户</button><button class="client-filter" data-filter="threeA">三甲医院</button><button class="client-filter" data-filter="signed">签约客户</button><button class="client-filter" data-filter="trial">试用客户</button><button class="client-filter" id="clearProvince">清除省份筛选</button></div><div class="client-grid" id="clientGrid"></div><button class="client-more" id="clientMore">展开全部客户</button><div class="client-source">数据口径分开计算：平台后台截至 2026-10-30 有 3,003 个机构账号，其中 2,096 个有上传记录；2025-11-05 至 2026-10-30 共 4,058,694 条切片记录。客户地图为经资料核验的 127 家机构，覆盖 26 个省级区域，其中签约 44 家、试用 85 家，2 家同时属于签约与试用；平台账号、客户机构和签约/试用状态不相加。三甲等级沿用已核验资料，未核验前不标注三甲。上传量为后台按机构账号归集的累计切片数（提取 2026-10-30 09:56 PDT），65/127 家已归集。</div></div>
 </section>
 
 <section class="section" id="packages"><!--PKGV3-->
@@ -563,7 +563,7 @@
 <div class="footer">广州华银康医疗集团股份有限公司 · 智慧病理服务价值看板</div>
 </main>
 <div class="map-tooltip" id="mapTooltip"></div>
-<script src="assets/public-map-loader.js?v=20261030-uploadcard" defer></script>
+<script src="assets/public-map-loader.js?v=20261030-backendcount" defer></script>
 <!--UXBODY--><div id="ux-progress"></div>
 <button id="ux-top" aria-label="回到顶部"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 5l-7 7h4.2v7h5.6v-7H19z" fill="currentColor"/></svg></button>
 <style>
