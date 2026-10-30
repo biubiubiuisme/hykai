@@ -9,7 +9,7 @@
   <script>document.documentElement.classList.add('access-pending')</script>
   <link rel="stylesheet" href="assets/access-control.css">
   <script src="assets/access-control.js?v=20261019-performance" defer></script>
-  <link rel="stylesheet" href="assets/admin.css">
+  <link rel="stylesheet" href="assets/admin.css?v=20261030-customerfusion">
 </head>
 <body>
   <div class="admin-shell">
@@ -24,7 +24,7 @@
         <button data-screen="settings"><i>05</i>统计规则</button>
       </nav>
       <div class="side-bottom">
-        <div class="data-note"><b>数据口径</b>签约、试用、交付和设备来自《智慧病理业务管理表20261030.xlsx》；平台使用量来自 PanoPath AI 后台，提取于 2026-10-30 08:41 PDT。销售登录、浏览和导出仍为模拟数据，不用于绩效。</div>
+        <div class="data-note"><b>数据口径</b>签约、试用、交付和设备来自《智慧病理业务管理表20261030.xlsx》；平台使用量来自 PanoPath AI 后台，提取于 2026-10-30 09:10 PDT。销售登录、浏览和导出仍为模拟数据，不用于绩效。</div>
         <a class="back-link" href="index.html#public" onclick="if(parent!==window){parent.postMessage({type:'hykai:navigate',portal:'public'},'*');return false}">查看客户展示</a>
         <a class="back-link" href="index.html#sales" onclick="if(parent!==window){parent.postMessage({type:'hykai:navigate',portal:'sales',salesView:'project'},'*');return false}">返回医院方案</a>
       </div>
@@ -32,7 +32,7 @@
 
     <main class="admin-main">
       <header class="topbar">
-        <div class="top-copy"><b id="topTitle">经营总览</b><span>业务表版本 2026-10-30 · 平台提取 2026-10-30 08:41 PDT</span></div>
+        <div class="top-copy"><b id="topTitle">经营总览</b><span>业务表版本 2026-10-30 · 平台提取 2026-10-30 09:10 PDT</span></div>
         <div class="top-tools"><input class="search" id="globalSearch" placeholder="搜索医院或负责人" aria-label="搜索医院或负责人"><select class="filter" id="globalRegion" aria-label="区域筛选"><option value="all">全部区域</option><option>华东</option><option>华北</option><option>华南三省</option><option>华中</option><option>华西</option><option>广东经营区</option></select><select class="period" aria-label="数据周期" title="业务表文件版本2026-10-30"><option>2026-10-30快照</option></select><div class="account"><span class="avatar">尚</span><div><b>尚滨</b><small>全国管理员</small></div></div></div>
       </header>
 
@@ -42,12 +42,14 @@
           <article class="kpi featured"><span>当前有效签约</span><strong>44</strong><small>47 条累计签约，减退单 3 条</small></article>
           <article class="kpi"><span>累计完成装机试用</span><strong>82</strong><small class="up">逐行复核口径</small></article>
           <article class="kpi"><span>试用累计上传</span><strong>64,322</strong><small>业务表汇总，非平台全量</small></article>
-          <article class="kpi"><span>试用超期未处置</span><strong>28</strong><small class="warn">需区域负责人核查</small></article>
-          <article class="kpi"><span>近一年平台切片</span><strong>405.8万</strong><small>2025-11-05 至 2026-10-30</small></article>
+          <article class="kpi"><span>在线试用候选账号</span><strong>50</strong><small class="warn">待别名映射，不等于医院数</small></article>
+          <article class="kpi"><span>平台累计上传</span><strong>654.4万</strong><small>后台全量，含内部及合作账号</small></article>
+          <article class="kpi"><span>10月平台上传</span><strong>37.9万</strong><small>2026-10-01 至 2026-10-30</small></article>
         </div>
+        <article class="panel reconciliation"><div class="panel-head"><div><h2>客户状态与平台活跃交叉表——正式客户、装机试用、在线候选分开统计</h2><p>商务状态来自业务表，账号与上传量来自平台后台；匹配子集不能反推全部客户</p></div><span class="sync-time">提取 2026-10-30 09:10 PDT</span></div><div class="reconciliation-wrap"><table class="reconciliation-table"><thead><tr><th>分类</th><th>业务客户数</th><th>后台账号/记录</th><th>累计上传</th><th>10月上传</th><th>近7天上传</th><th>使用边界</th></tr></thead><tbody><tr><td><b>套餐签约</b><span class="status-tag confirmed">正式口径</span></td><td>44 条有效签约</td><td>14 个精确匹配账号</td><td>2,233</td><td>645</td><td>319</td><td>仅为已完成名称匹配的子集</td></tr><tr><td><b>装机试用</b><span class="status-tag confirmed">业务表口径</span></td><td>82 家完成装机</td><td>77 个精确匹配账号</td><td>8,012</td><td>577</td><td>23</td><td>业务表另有累计上传 64,322，单位待确认</td></tr><tr><td><b>在线试用候选</b><span class="status-tag pending">待归类</span></td><td>待核验</td><td>50 个后台候选账号</td><td>32,874</td><td>4,626</td><td>1,205</td><td>包含别名账号，不能直接作为医院数</td></tr><tr><td><b>平台全部使用</b><span class="status-tag platform">全量</span></td><td>不统计客户数</td><td>3,003 条后台活动记录</td><td>6,544,069</td><td>379,226</td><td>—</td><td>包含内部实验室及其他合作账号</td></tr></tbody></table></div><div class="reconciliation-note">管理规则：正式经营汇报采用 44 条有效签约和 82 家完成装机试用；后台 50 个候选账号完成医院别名映射前，只用于运营核查，不进入正式客户数。</div></article>
         <div class="grid-2">
           <article class="panel"><div class="panel-head"><div><h2>六大区域有效签约进度——华东20条领先，广东经营区年度缺口46条</h2><p>年度目标256条；累计签约47条、退单3条，有效44条</p></div><button class="text-btn" data-screen-jump="hospitals">查看医院</button></div><div class="region-bars" id="regionBars"></div></article>
-          <article class="panel"><div class="panel-head"><div><h2>需要处理的数据与项目问题</h2><p>先统一口径，再用于对外展示和绩效统计</p></div></div><div class="alert-list"><div class="alert danger"><i></i><div><b>试用汇总公式漏计新疆2家</b><span>逐行合计82家，原公式仅得到80家；超期数同样少计2家</span></div><em>修正源表</em></div><div class="alert"><i></i><div><b>签约汇总47条，明细51条</b><span>汇总填报退单3条，但明细备注仅能明确识别1条</span></div><em>确认清单</em></div><div class="alert"><i></i><div><b>试用超期未处置28家</b><span>业务表逐行复核口径，需结合实际撤机、转签约和延期情况清理</span></div><em>推进处置</em></div></div></article>
+          <article class="panel"><div class="panel-head"><div><h2>需要处理的数据与项目问题</h2><p>先统一口径，再用于对外展示和绩效统计</p></div></div><div class="alert-list"><div class="alert danger"><i></i><div><b>在线候选账号需要别名映射</b><span>50 个候选中已发现签约或装机医院别名，完成映射前不能表述为 50 家医院</span></div><em>核对账号</em></div><div class="alert danger"><i></i><div><b>试用汇总公式漏计新疆2家</b><span>逐行合计82家，原公式仅得到80家；超期数同样少计2家</span></div><em>修正源表</em></div><div class="alert"><i></i><div><b>签约汇总47条，明细51条</b><span>汇总填报退单3条，但明细备注仅能明确识别1条</span></div><em>确认清单</em></div><div class="alert"><i></i><div><b>试用累计上传 64,322 的单位待确认</b><span>源表未明确是切片、病例还是导出记录，确认前不与平台上传量换算</span></div><em>确认单位</em></div><div class="alert"><i></i><div><b>试用超期未处置28家</b><span>业务表逐行复核口径，需结合实际撤机、转签约和延期情况清理</span></div><em>推进处置</em></div></div></article>
         </div>
         <div class="section-title"><h2>本周销售推进概览</h2><span>点击销售工作量查看明细</span></div>
         <div class="table-card"><table class="data-table"><thead><tr><th>负责人</th><th>区域</th><th>活跃天数</th><th>医院方案</th><th>客户演示</th><th>有效推进</th><th>结果事项</th><th>工作量指数</th></tr></thead><tbody id="overviewSales"></tbody></table></div>
@@ -81,6 +83,6 @@
   </div>
 
   <div class="drawer-mask" id="drawerMask"><aside class="drawer"><button class="drawer-close" id="drawerClose" aria-label="关闭">×</button><div id="drawerContent"></div></aside></div>
-  <script src="assets/admin.js"></script>
+  <script src="assets/admin.js?v=20261030-customerfusion"></script>
 </body>
 </html>
