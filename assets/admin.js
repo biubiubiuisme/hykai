@@ -1,11 +1,11 @@
 if(new URLSearchParams(location.search).get('embed')==='1')document.body.classList.add('portal-embedded');
 const regions=[
-  {name:'华东',task:26,signed:19,gap:7,rate:73.1},
-  {name:'华北',task:45,signed:7,gap:38,rate:15.6},
-  {name:'华南三省',task:37,signed:6,gap:31,rate:16.2},
-  {name:'华中',task:36,signed:5,gap:31,rate:13.9},
-  {name:'华西',task:36,signed:4,gap:32,rate:11.1},
-  {name:'广东经营区',task:48,signed:1,gap:47,rate:2.1}
+  {name:'华东',task:40,signed:20,gap:20,rate:50.0},
+  {name:'华北',task:46,signed:7,gap:39,rate:15.2},
+  {name:'华南三省',task:43,signed:6,gap:37,rate:14.0},
+  {name:'华中',task:39,signed:5,gap:34,rate:12.8},
+  {name:'华西',task:40,signed:4,gap:36,rate:10.0},
+  {name:'广东经营区',task:48,signed:2,gap:46,rate:4.2}
 ];
 
 const sales=[
@@ -18,12 +18,12 @@ const sales=[
 ];
 
 const hospitals=[
-  {name:'深圳市第三人民医院',status:'trial',statusLabel:'试用客户',owner:'温文群',region:'广东经营区',place:'广东 · 深圳',usage:'2,577张',latest:'0张',result:'试用报告未标注',versions:3,views:6,last:'9月25日',risk:'试用已到期'},
-  {name:'何贤纪念医院',status:'trial',statusLabel:'试用客户',owner:'温文群',region:'广东经营区',place:'广东 · 广州',usage:'438张',latest:'0张',result:'试用报告已出',versions:2,views:4,last:'9月24日',risk:'推进采购节点'},
-  {name:'首都医科大学附属北京天坛医院',status:'signed',statusLabel:'签约客户',owner:'徐旭昶',region:'华北',place:'北京',usage:'—',latest:'—',result:'已列入签约汇总 · 合同细节待核',versions:4,views:9,last:'10月16日',risk:'补齐交付信息'},
-  {name:'中国人民解放军火箭军总医院',status:'trial',statusLabel:'试用客户',owner:'徐旭昶',region:'华北',place:'北京',usage:'576张',latest:'0张',result:'试用报告未标注',versions:2,views:3,last:'9月22日',risk:'补齐试用报告'},
-  {name:'宁夏回族自治区人民医院',status:'trial',statusLabel:'试用客户',owner:'祁勇',region:'华中',place:'宁夏 · 银川',usage:'278张',latest:'0张',result:'正在统计数据待出',versions:3,views:5,last:'9月25日',risk:'报告形成中'},
-  {name:'常德市第一人民医院',status:'trial',statusLabel:'试用客户',owner:'祁勇',region:'华中',place:'湖南 · 常德',usage:'298张',latest:'0张',result:'试用延期',versions:2,views:2,last:'9月19日',risk:'7天无推进'},
+  {name:'深圳市第三人民医院',status:'trial',statusLabel:'试用客户',owner:'范发鑫',region:'广东经营区',place:'广东 · 深圳',usage:'完成1,200例',latest:'—',result:'旧版模型结果待用新版重测',versions:3,views:6,last:'10月30日',risk:'预算沟通与撤机'},
+  {name:'何贤纪念医院',status:'trial',statusLabel:'试用客户',owner:'王翊晖',region:'广东经营区',place:'广东 · 广州',usage:'已导出380片',latest:'—',result:'待补朗珈数据，预算报告中',versions:2,views:4,last:'10月30日',risk:'推进预算报告'},
+  {name:'首都医科大学附属北京天坛医院',status:'trial',statusLabel:'试用客户',owner:'费立娟',region:'华北',place:'北京',usage:'—',latest:'—',result:'细胞学适配中，组织学未测试',versions:4,views:9,last:'10月30日',risk:'补齐试用进展'},
+  {name:'中国人民解放军火箭军总医院',status:'trial',statusLabel:'试用客户',owner:'费立娟',region:'华北',place:'北京',usage:'—',latest:'—',result:'细胞学适配中，组织学未测试',versions:2,views:3,last:'10月30日',risk:'试用超期待处置'},
+  {name:'宁夏回族自治区人民医院',status:'trial',statusLabel:'试用客户',owner:'王志成',region:'华西',place:'宁夏 · 银川',usage:'278张',latest:'—',result:'扫描仪正常使用，服务器未接入内网',versions:3,views:5,last:'10月30日',risk:'打通内网后启动AI'},
+  {name:'常德市第一人民医院',status:'trial',statusLabel:'试用客户',owner:'冯青',region:'华中',place:'湖南 · 常德',usage:'—',latest:'—',result:'服务器与扫描仪已交付',versions:2,views:2,last:'10月30日',risk:'试用超期待处置'},
   {name:'古田东区医院',status:'signed',statusLabel:'签约客户',owner:'陈宏桦',region:'华南三省',place:'福建 · 古田',usage:'—',latest:'—',result:'100万 · 交付完成',versions:5,views:11,last:'9月26日',risk:'进入运营跟踪'},
   {name:'福州市中医院',status:'signed',statusLabel:'签约客户',owner:'陈宏桦',region:'华南三省',place:'福建 · 福州',usage:'—',latest:'—',result:'100万 · 交付完成',versions:4,views:8,last:'9月23日',risk:'进入运营跟踪'},
   {name:'连云港市第一人民医院',status:'signed',statusLabel:'签约客户',owner:'徐旭昶',region:'华东',place:'江苏 · 连云港',usage:'—',latest:'—',result:'30万 · 交付完成',versions:3,views:7,last:'9月21日',risk:'复核服务范围'},
@@ -73,7 +73,7 @@ function showScreen(name){
 }
 function openHospital(name){
   const h=hospitals.find(x=>x.name===name);if(!h)return;
-  $('#drawerContent').innerHTML=`<div class="eyebrow">HOSPITAL TIMELINE</div><h2>${h.name}</h2><div class="drawer-sub">${h.place} · ${h.region} · 负责人 ${h.owner}</div><div class="drawer-kpis"><div><span>经营状态</span><b>${h.statusLabel}</b></div><div><span>方案版本</span><b>${h.versions}个</b></div><div><span>客户浏览</span><b>${h.views}次</b></div></div><div class="demo-flag"><i></i>方案与浏览记录为模拟数据</div><div class="timeline-list"><div class="event"><time>2026-10-16</time><b>${h.risk}</b><span>根据最新经营汇总和交付状态列入提醒。</span></div><div class="event"><time>2026-10-15</time><b>销售更新医院方案</b><span>版本 V${h.versions}：调整预算模块并补充下一步计划。</span></div><div class="event"><time>2026-10-14</time><b>客户打开演示链接</b><span>浏览整体方案、建议配置和预算摘要。</span></div><div class="event"><time>2026-10-12</time><b>同步经营数据</b><span>${h.result}；累计上传 ${h.usage}，最新上传 ${h.latest}。</span></div></div><div class="drawer-actions"><a class="primary" href="index.html" style="text-decoration:none">编辑医院方案</a><button class="secondary" id="drawerDismiss">标记已查看</button></div>`;
+  $('#drawerContent').innerHTML=`<div class="eyebrow">HOSPITAL TIMELINE</div><h2>${h.name}</h2><div class="drawer-sub">${h.place} · ${h.region} · 负责人 ${h.owner}</div><div class="drawer-kpis"><div><span>经营状态</span><b>${h.statusLabel}</b></div><div><span>方案版本</span><b>${h.versions}个</b></div><div><span>客户浏览</span><b>${h.views}次</b></div></div><div class="demo-flag"><i></i>方案与浏览记录为模拟数据</div><div class="timeline-list"><div class="event"><time>2026-10-30</time><b>${h.risk}</b><span>根据《智慧病理业务管理表20261030.xlsx》列入提醒。</span></div><div class="event"><time>2026-10-30</time><b>业务状态同步</b><span>${h.result}；业务表使用量记录：${h.usage}。</span></div><div class="event"><time>模拟</time><b>销售更新医院方案</b><span>版本 V${h.versions}：调整预算模块并补充下一步计划。</span></div><div class="event"><time>模拟</time><b>客户打开演示链接</b><span>浏览整体方案、建议配置和预算摘要。</span></div></div><div class="drawer-actions"><a class="primary" href="index.html" style="text-decoration:none">编辑医院方案</a><button class="secondary" id="drawerDismiss">标记已查看</button></div>`;
   $('#drawerMask').classList.add('open');
 }
 document.addEventListener('click',e=>{
